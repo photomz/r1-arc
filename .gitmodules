@@ -1,0 +1,6 @@
+[submodule "arc-dsl"]
+	path = arc-dsl
+	url = https://github.com/photomz/arc-dsl.git
+[submodule "arc-evolutionary"]
+	path = arc-evolutionary
+	url = https://github.com/photomz/arc-evolutionary.git
