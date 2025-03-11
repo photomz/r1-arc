@@ -21,6 +21,7 @@
 - DSL likely flexible, each private task can be represented by DSL syntax but lengthy or break principles (Python loops, if branches, etc).
 - Generator does rejection sampling to place objects in grid, so unknown time (timeout possible). Has difficulty knob corr {num objects, grid size, amount of noise, etc}.
 - Rare overdetermined tasks, so almost certain that solver for examples is also solver for test input.
+- Verifiers superset of solvers. Longer code. 
 
 ## [BARC](https://github.com/xu3kev/BARC)
 - 400K ARC-Heavy remixes from GPT4o. But noisy.

@@ -201,6 +201,7 @@ Your approach evolved from a traditional model fine-tuning exercise to a sophist
    - Configure 32-64 samples per GRPO update
    - Use 1 vLLM trajectory sampler, 3 batch gradient updates
    - Implement the delta reward mechanism: Δ of % program correctness
+   - Maybe budget force "Wait" (s1) if doesn't rethink, or reasoning ability washed away by SFT.
 
 7. **Evaluation Framework**
    - Create metrics tracking for:
