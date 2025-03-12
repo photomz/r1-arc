@@ -24,6 +24,11 @@ Evolutionary sampling
 - 3.7 Sonnet gets DSL {solvers, reused strats, typedefs} with low comments 
 - Then next test: 1 shot DSL w Cursor prompt? Quick test, need eval suite to (1) prettify ICL format (2) Simple exec server.
 - Allow `print(xk)` to debug most uncertain.
+- Notice big degradation w Groq SpecDec. Retire
+
+- [x] Grid format viewer
+- [x] LLM providers w/ Typer stub input: grok, grok spec dec, hyperbolic, deepseek china. Async.
+- [ ] Exec server
 
 ## Results
 

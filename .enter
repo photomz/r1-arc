@@ -1,0 +1,11 @@
+# First define the alias
+alias upython="uv run python"
+
+# Define and immediately export functions
+tok() {
+    upython -m src.utils.devtools "$@"
+}
+
+grid() {
+    upython -m src.services.formatters.grid "$@"
+}
