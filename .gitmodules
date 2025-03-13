@@ -4,3 +4,6 @@
 [submodule "src/dsl"]
 	path = src/dsl
 	url = https://github.com/photomz/arc-dsl.git
+[submodule "src/re_arc"]
+	path = src/re_arc
+	url = https://github.com/photomz/re-arc.git
