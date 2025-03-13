@@ -1,9 +1,9 @@
 # R1-ARC Code Guidelines
 
 ## Build Commands
-- Run main project: `python src/main.py`
-- Run tests: `python -m pytest`
-- Run specific test: `python -m pytest tests.py::test_function_name` 
+- Run main project: `upython src/main.py`
+- Run tests: `upython -m pytest`
+- Run specific test: `upython -m pytest tests.py::test_function_name` 
 - Generate stubs: `make stubs` (in arc-dsl directory)
 - Lint: `ruff check .`
 - Typecheck: `mypy src/`

@@ -28,7 +28,17 @@ Evolutionary sampling
 
 - [x] Grid format viewer
 - [x] LLM providers w/ Typer stub input: grok, grok spec dec, hyperbolic, deepseek china. Async.
-- [ ] Exec server
+- [x] Inspect intermediate state
+- [x] Exec server.
+- [ ] pprint 2d tuple debug w grid.py
+- [ ] Exec any solver w local internals.
+- [ ] Drop-in swap prompt blocks (reasoning examples, var inputs). Track from textfile with {vars}, git track, 
+- [ ] In
+
+**03-12 7am**
+Skip SFT data collection. Eval Qwen 2.5B base directly w vLLM self-host+expose port.
+- Have pretty-printed DSL CLI w diffs, func name inspect. Give to Qwen 2.5, check max reward.
+- Plot online GRPO for poster, SFT after. Then move to 224n open-clip. 
 
 ## Results
 

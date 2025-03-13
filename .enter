@@ -9,3 +9,5 @@ tok() {
 grid() {
     upython -m src.services.formatters.grid "$@"
 }
+
+export BETTER_EXCEPTIONS=1

@@ -1,10 +1,13 @@
 from enum import Enum
+import sys
+from types import FrameType
 from typing_extensions import TypedDict
-from devtools.debug import Debug, DebugArgument
+from devtools.debug import Debug, DebugArgument, DebugOutput
 from deepseek_tokenizer import ds_token
 import tiktoken
 from typing import Any, Optional, Callable
 import typer
+from io import StringIO
 
 
 class TokenizerMethods(TypedDict):
@@ -34,12 +37,51 @@ class TokenArg(DebugArgument):
             self.extra.append(("tok", n_tokens))  # Deepseek tokens
 
 
-class HotfixedDebug(Debug):
+class TokenDebug(Debug):
     output_class = Debug.output_class
     output_class.arg_class = TokenArg
 
 
-debug = HotfixedDebug()
+class LocalsDebug(Debug):
+    output_class = Debug.output_class
+    output_class.arg_class = DebugArgument
+
+    """Hotwire Debug to capture local vars in caller frame, and return formatted str."""
+
+    def __call__(self, *args: "Any", frame_depth_: int = 2, **kwargs: "Any") -> str:
+        output_buffer = StringIO()
+        super().__call__(
+            *args,
+            file_=output_buffer,
+            flush_=False,
+            frame_depth_=frame_depth_ + 1,
+            **kwargs,
+        )
+        return output_buffer.getvalue().strip()
+
+    def _process(self, args: "Any", kwargs: "Any", frame_depth: int) -> DebugOutput:
+        debug_output = super()._process(args, kwargs, frame_depth + 1)
+
+        # Get the current frame to extract locals
+        try:
+            call_frame: "FrameType" = sys._getframe(frame_depth)
+        except ValueError:
+            return debug_output  # If frame retrieval fails, return standard output
+
+        # Capture local variables
+        locals_args = [
+            self.output_class.arg_class(value, name=name)
+            for name, value in call_frame.f_locals.items()
+        ]
+        debug_output.arguments += locals_args
+        return debug_output
+
+
+# Instantiate the new debug class
+verbose_debug = LocalsDebug()
+
+
+debug = TokenDebug()
 
 
 app = typer.Typer()
@@ -53,6 +95,14 @@ def tokenize(text: str, use: str = "deepseek"):
     tokens = list(map(coder["to_tokens"], ids))
 
     debug(tokens)
+
+
+@app.command()
+def locals(text: str = "howdy"):
+    hidden_var = "aye mate"  # Should show in locals print
+    for i in range(1):
+        out = verbose_debug(text)
+        print(out)
 
 
 if __name__ == "__main__":
