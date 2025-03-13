@@ -30,16 +30,14 @@ A. Code Interpreter.
 - [x] MVP2: func(io) trace of any solver_* in Typer (WIP)
 - [ ] vardiff is purefunc of DSLFunctionCall in new `differ.py`
 - [x] Fuse types in dsl,src.
-- [ ] -> vardiff w any grid view
+- [x] -> vardiff w any grid view
 - [ ] Good dataclass format of tracer stats
-- [ ] MVP3: vardiff trace of any solver_*
+- [x] MVP3: vardiff trace of any solver_*
 - [ ] MVP4: trace any DSL fp w dataclass stats in JSON file
 - [ ] MVP5: choice of arbitrary formatter for prompt iter
 - [ ] Bonus: Live shell interpreter w `load(task)`, `dump(stats)`, `clear`, `help`, `man(func)`
-
-Failing tests: 239be575
-
-B. sLM Baseline 8pm
+  
+B. sLM Baseline 8pm (7am)
 > 2h/16 = 8m each.
 - [ ] Github find vLLM script for 2.5B, 1xA100.
 - [ ] Batch gen on same input
