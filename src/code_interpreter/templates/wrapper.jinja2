@@ -1,64 +1,61 @@
-{# Template for wrapping user code with necessary imports and safety constraints #}
-{# This is used by the Python execution server to create a runnable script #}
-
-import sys
-import json
-import traceback
+{# Minimal template for Python code execution with improved output handling #}
+import sys, json, traceback, tempfile, os, time
 import numpy as np
-from typing import *
 from pathlib import Path
 
-root = Path(__file__).resolve()
-while not (root / ".git").exists():
-    root = root.parent
-sys.path.append(str(root))
+ROOT = Path(__file__).resolve()
+while not (ROOT / ".git").exists():
+    ROOT = ROOT.parent
+sys.path.append(str(ROOT))
 
-from src.dsl.arc_types import *
-from src.dsl.dsl import *
-from src.utils.devtools import verbose_debug as original_verbose_debug
-
-# Custom verbose_debug function to capture and print output
-def verbose_debug(x):
-    """Wrapper for verbose_debug that prints to stdout with a special marker"""
-    result = original_verbose_debug(x)
-    # Print debug output with special marker for parsing
-    if isinstance(x, int) and x == 0:
-        print("DEBUG_OUTPUT:" + result)
-    return x
-
-# Original code with solve/transform function
-{{ user_code }}
-
-# Input grid
-grid_lists = {{ input }}
-
-def to_python_array(obj):
-    """Convert numpy arrays back to normal Python lists"""
-    if isinstance(obj, np.integer):
-        return int(obj)
-    elif isinstance(obj, np.ndarray):
-        return to_python_array(obj.tolist())
-    elif isinstance(obj, list):
-        return [to_python_array(item) for item in obj]
-    return obj
 
 try:
-    results: list[list[list[int]]] = []
-    for grid_list in grid_lists:
-        # Try to call solve function (preferred) or fall back to transform
+    # Code Interpreter utils: tracer
+    from viztracer import log_sparse
+    from src.code_interpreter.tracy import VarTracer
+    # DSL
+    from src.dsl.arc_types import *
+    from src.dsl.dsl import *
+    from src.dsl.constants import *
+    from src.utils import jdumps, get_shape
+except ModuleNotFoundError as e:
+    print(ROOT, file=sys.stderr)
+    raise e
 
-        if 'solve' in globals():
-            result = solve(grid_list)
-        else:
-            print("Error: `solve` function not found", file=sys.stderr)
-            sys.exit(1)
-            
-        result = to_python_array(result)
-        
-        results.append(result)
+RELPATH = f'src/tmp/{os.getpid()}.json'
+
+Is = {{ input }} 
+
+{{ code_literal }}
+
+if 'solve' not in globals():
+    raise SyntaxError("No `solve` function found")
+
+try:
+    tracer = VarTracer()
     
-    # Print results as JSON with special marker for parsing
-    print("TRANSFORM_RESULT:" + json.dumps(results))
+    Os = []
+    for I in Is:
+        tracer.start()
+        O = solve(I)
+        tracer.export()
+        Os.append(O)
+
+    data = {
+        "I": Is,
+        "O": Os,
+        "I_shapes": [get_shape(I) for I in Is],
+        "O_shapes": [get_shape(O) for O in Os],
+        "intermediates": tracer.vartraces
+    }
+    
+    fname = (ROOT / RELPATH).resolve()
+    fname.parent.mkdir(parents=True, exist_ok=True)
+    with open(fname, 'w') as f:
+        f.write(jdumps(data))
+        #son.dump(tracer.traces, f)
+        print(fname, file=sys.stdout) # Pass fname over subprocess, to read by caller
+
 except Exception as e:
-    print(f"Error executing code: {e}\n{traceback.format_exc()}", file=sys.stderr)
-    sys.exit(1)
+    print(f"Subprocess ", end="", file=sys.stderr)
+    raise e

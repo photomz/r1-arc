@@ -24,19 +24,21 @@ A. Code Interpreter.
 > 2h/14 = 9m each.
 - [x] Move `dsl` in src. Has file import issues. 40m 6:20pm
 - [x] Refactor devtools debug -> tracer.
-- [ ] Script tasks as JSONL no test/sol split.
-- [ ] Aggregate load of task/DSL funcs/type signatures/etc into core, tested util.
--> [x] MVP1: func(io) trace 1 string literal func
-- [ ] MVP2: func(io) trace of any solver_* in Typer
+- [x] Script tasks as JSONL no test/sol split. 2am
+- [x] Aggregate load of task/DSL funcs/type signatures/etc into core, tested util. 2am
+- [x] MVP1: func(io) trace 1 string literal func
+- [x] MVP2: func(io) trace of any solver_* in Typer (WIP)
 - [ ] vardiff is purefunc of DSLFunctionCall in new `differ.py`
-- [ ] Fuse types in dsl,src.
+- [x] Fuse types in dsl,src.
 - [ ] -> vardiff w any grid view
 - [ ] Good dataclass format of tracer stats
 - [ ] MVP3: vardiff trace of any solver_*
 - [ ] MVP4: trace any DSL fp w dataclass stats in JSON file
 - [ ] MVP5: choice of arbitrary formatter for prompt iter
 - [ ] Bonus: Live shell interpreter w `load(task)`, `dump(stats)`, `clear`, `help`, `man(func)`
-`
+
+Failing tests: 239be575
+
 B. sLM Baseline 8pm
 > 2h/16 = 8m each.
 - [ ] Github find vLLM script for 2.5B, 1xA100.
@@ -57,6 +59,6 @@ B. sLM Baseline 8pm
 - [ ] MVP5: Solve easy task eventually w tool iter
 
 C. GRPO Training Run
->
+> Good [unsloth](https://docs.unsloth.ai/basics/reasoning-grpo-and-rl), [verifier](https://github.com/willccbb/verifiers/blob/main/verifiers/envs/code_env.py) articles
 
 > Broad idea: Refactor local caller exec, remote vLLM gen -> local vLLM trajectories on cuda:0, Dataset Generator on cpu, halt on ```py to cpu code interpreter; cuda:1-3 is backprop. Rest follows open-r1.

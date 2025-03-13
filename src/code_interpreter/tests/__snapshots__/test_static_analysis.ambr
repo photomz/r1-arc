@@ -1,0 +1,32 @@
+# serializer version: 1
+# name: test_ast
+  StaticMetrics(n_lines=8, avg_line_length=0, n_if=0, n_loop=0, n_returns=1, dsl_primitives={'astuple', 'hconcat', 'hmirror', 'crop'}, imports=set(), syntax_ok=True, run_ok=False, format_ok=False)
+# ---
+# name: test_cst[def solve_e9afcf9a(I):\n    x1 = astuple(TWO, ONE)\n    x2 = crop(I, ORIGIN, x1)\n    x3 = hmirror(x2)\n    x4 = hconcat(x2, x3)\n    x5 = hconcat(x4, x4)\n    O = hconcat(x5, x4)\n    return O]
+  '''
+  @log_sparse(stack_depth=10)
+  def solve_e9afcf9a(I):
+      x1 = astuple(TWO, ONE)
+      x2 = crop(I, ORIGIN, x1)
+      x3 = hmirror(x2)
+      x4 = hconcat(x2, x3)
+      x5 = hconcat(x4, x4)
+      O = hconcat(x5, x4)
+      
+      for name, value in locals().items():
+          tracer.log_var(name, value)
+      return O
+  '''
+# ---
+# name: test_cst[import os\ndef solve(I):\n    O = vmirror(I)\n    return O]
+  '''
+  import os
+  @log_sparse(stack_depth=10)
+  def solve(I):
+      O = vmirror(I)
+      
+      for name, value in locals().items():
+          tracer.log_var(name, value)
+      return O
+  '''
+# ---
