@@ -32,8 +32,10 @@ dev = [
     "pytest>=8.3.5",
     "syrupy>=4.9.0",
 ]
-
-# Pytest only src/**/*
+# Pytest configuration
 [tool.pytest.ini_options]
-python_files = ["src/**/test_*.py"]
+testpaths = ["src"]
+python_files = ["test_*.py"]
 python_functions = ["test_*"]
+addopts = "-p no:warnings"
+asyncio_default_fixture_loop_scope = "function"

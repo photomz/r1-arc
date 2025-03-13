@@ -19,6 +19,7 @@ import jinja2
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import Terminal256Formatter
+from dataclasses import dataclass
 
 from pydantic import BaseModel, Field
 
@@ -41,7 +42,8 @@ jinja_env = jinja2.Environment(
 )
 
 
-class PythonResult(BaseModel):
+@dataclass
+class PythonResult:
     """Result of executing Python code"""
 
     stdout: Optional[str] = None
@@ -62,7 +64,8 @@ class PythonException(Exception):
     pass
 
 
-class ResourceLimits(BaseModel):
+@dataclass
+class ResourceLimits:
     """Resource limits for code execution"""
 
     max_memory_bytes: Optional[int] = None  # Memory limit in bytes
@@ -91,9 +94,7 @@ class ResultCache:
         cls._cache.clear()
 
 
-def create_wrapped_code(
-    code: str, grid_lists: List[List[List[int]]], allowed_modules: Set[str]
-) -> str:
+def create_wrapped_code(code: str, input: Any, allowed_modules: Set[str]) -> str:
     """
     Create the wrapped code to execute in the subprocess using Jinja2 template
 
@@ -107,10 +108,13 @@ def create_wrapped_code(
     """
     debug("Creating wrapped code for execution using Jinja2 template")
     try:
+
+        print(input)
+        print(repr(input))
         template = jinja_env.get_template("wrapper.jinja2")
         return template.render(
             user_code=code,
-            grid_lists_json=json.dumps(grid_lists),
+            input=repr(input),
             allowed_modules=allowed_modules,
         )
     except jinja2.exceptions.TemplateError as e:
@@ -280,6 +284,10 @@ def execute_subprocess(
         stderr = f"Execution timed out after {timeout} seconds"
         return_code = -1
         timed_out = True
+
+    if stderr:
+        # Pygments print error
+        print(highlight(stderr, PythonLexer(), Terminal256Formatter()))
 
     return stdout, stderr, return_code, timed_out
 

@@ -54,7 +54,7 @@ class DSLTracer:
 
     execution_log: List[DSLFunctionCall] = field(default_factory=list)
     call_stack: List[int] = field(default_factory=list)
-    hooks: Set[Callable] = field(default_factory=set)
+    hooks: List[Callable] = field(default_factory=list)
     call_counter: int = 0
     enabled: bool = True
 
@@ -136,8 +136,7 @@ class DSLTracer:
             elif obj in instrumented_funcs:
                 # Star-imported functions
                 module.__dict__[name] = instrumented_funcs[obj]
-
-        self.hooks += set(list(instrumented_funcs.keys()))
+        self.hooks += list(instrumented_funcs.keys())
         print(f"Add instrument hooks: {self.hooks[:4]} ... (total: {len(self.hooks)})")
 
     def get_function_stats(self):

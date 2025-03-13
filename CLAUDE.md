@@ -1,6 +1,7 @@
 # R1-ARC Code Guidelines
 
 ## Build Commands
+- Package manager: `uv` not `pip`.
 - Python in uv venv: `upython -m src.{module} --args`
 - Run tests: `upython -m pytest`
 - Run specific test: `upython -m pytest -k "glob" ` 

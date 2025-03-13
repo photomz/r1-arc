@@ -23,10 +23,10 @@ Iteration 1 too slow. No time to rejection sample dataset at scale (DeepSeek pro
 A. Code Interpreter.
 > 2h/14 = 9m each.
 - [x] Move `dsl` in src. Has file import issues. 40m 6:20pm
-- [ ] Refactor devtools debug -> tracer.
+- [x] Refactor devtools debug -> tracer.
 - [ ] Script tasks as JSONL no test/sol split.
 - [ ] Aggregate load of task/DSL funcs/type signatures/etc into core, tested util.
-- [ ] MVP1: func(io) trace 1 string literal func
+-> [x] MVP1: func(io) trace 1 string literal func
 - [ ] MVP2: func(io) trace of any solver_* in Typer
 - [ ] vardiff is purefunc of DSLFunctionCall in new `differ.py`
 - [ ] Fuse types in dsl,src.
@@ -36,7 +36,7 @@ A. Code Interpreter.
 - [ ] MVP4: trace any DSL fp w dataclass stats in JSON file
 - [ ] MVP5: choice of arbitrary formatter for prompt iter
 - [ ] Bonus: Live shell interpreter w `load(task)`, `dump(stats)`, `clear`, `help`, `man(func)`
-
+`
 B. sLM Baseline 8pm
 > 2h/16 = 8m each.
 - [ ] Github find vLLM script for 2.5B, 1xA100.
