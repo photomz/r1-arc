@@ -36,7 +36,6 @@ class CodeMetrics(BaseModel):
     ast_node_counts: Dict[str, int] = Field(default_factory=dict)
     compilation_success: bool = False
     execution_success: bool = False
-    output_shape_correct: bool = False
 
 
 def collect_static_metrics(code: str) -> CodeMetrics:

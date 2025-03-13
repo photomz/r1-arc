@@ -3,7 +3,7 @@ Tests for the code analysis module.
 """
 
 import pytest
-from src.utils.exec_server.code_analysis import (
+from src.code_interpreter.code_analysis import (
     collect_static_metrics,
     attempt_code_repair,
     format_error,
@@ -220,7 +220,7 @@ def solve(I):
 
 # Should provide appropriate suggestions for different error types
 def test_get_suggestions_for_error_types():
-    from src.utils.exec_server.code_analysis import ErrorType
+    from src.code_interpreter.code_analysis import ErrorType
 
     # Test suggestions for various error types
     suggestions = {

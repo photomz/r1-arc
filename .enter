@@ -10,4 +10,8 @@ grid() {
     upython -m src.services.formatters.grid "$@"
 }
 
+pytest () {
+    upython -m pytest src "$@"
+}
+
 export BETTER_EXCEPTIONS=1

@@ -14,7 +14,7 @@ from typing import Optional, List, Dict, Any
 
 # Import execution functions
 from src.utils import ROOT
-from src.utils.exec_server.execution import (
+from src.code_interpreter.execution import (
     run_python_transform_sync,
     PythonResult,
     TransformInput,

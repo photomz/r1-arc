@@ -23,7 +23,7 @@ from pygments.formatters import Terminal256Formatter
 from pydantic import BaseModel, Field
 
 from src.utils.devtools import debug
-from src.utils.exec_server.code_analysis import (
+from src.code_interpreter.code_analysis import (
     CodeMetrics,
     collect_static_metrics,
     attempt_code_repair,
@@ -214,32 +214,6 @@ def parse_transform_results(
                 debug(f"Found debug output: {debug_message[:50]}...")
 
     return transform_results, debug_outputs
-
-
-def validate_output_shape(
-    transform_results: List[List[List[int]]], grid_lists: List[List[List[int]]]
-) -> bool:
-    """
-    Validate that output shape is correct
-
-    Args:
-        transform_results: The transform results
-        grid_lists: The input grids
-
-    Returns:
-        True if all output shapes are valid
-    """
-    debug("Validating output shape")
-    if transform_results and grid_lists:
-        all_correct = True
-        for i, (result, input_grid) in enumerate(zip(transform_results, grid_lists)):
-            if not isinstance(result, list) or not result:
-                debug(f"Result {i} is not a valid grid")
-                all_correct = False
-                break
-            # Optional deeper validation could be added here
-        return all_correct
-    return False
 
 
 def execute_subprocess(
@@ -476,12 +450,6 @@ def run_python_transform_sync(
                     failure_count + 1,
                     allowed_modules,
                 )
-
-        # Validate output shape
-        if transform_results:
-            static_metrics.output_shape_correct = validate_output_shape(
-                transform_results, grid_lists
-            )
 
         # Prepare the result
         result = prepare_result(

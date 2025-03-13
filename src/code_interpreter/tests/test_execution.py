@@ -6,7 +6,7 @@ import asyncio
 import pytest
 from typing import List, Set, Optional
 
-from src.utils.exec_server.execution import (
+from src.code_interpreter.execution import (
     run_python_transform_sync,
     run_python_transform_async,
     run_python_transforms,

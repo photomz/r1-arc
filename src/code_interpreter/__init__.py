@@ -11,24 +11,24 @@ It includes:
 """
 
 # Import main components for easy access
-from src.utils.exec_server.execution import (
+from src.code_interpreter.execution import (
     run_python_transform_sync,
     run_python_transform_async,
     run_python_transforms,
     PythonResult,
     PythonException,
     ResourceLimits,
-    TransformInput
+    TransformInput,
 )
 
-from src.utils.exec_server.code_analysis import (
+from src.code_interpreter.code_analysis import (
     CodeMetrics,
     collect_static_metrics,
-    attempt_code_repair
+    attempt_code_repair,
 )
 
 # Import CLI
-from src.utils.exec_server.cli import app as cli_app
+from src.code_interpreter.cli import app as cli_app
 
 # Version info
 __version__ = "0.1.0"

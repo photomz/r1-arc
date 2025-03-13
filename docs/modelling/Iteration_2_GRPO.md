@@ -22,7 +22,7 @@ Iteration 1 too slow. No time to rejection sample dataset at scale (DeepSeek pro
 
 A. Code Interpreter.
 > 2h/14 = 9m each.
-- [x] Move `dsl` in src. Has file import issues. 40m
+- [x] Move `dsl` in src. Has file import issues. 40m 6:20pm
 - [ ] Refactor devtools debug -> tracer.
 - [ ] Script tasks as JSONL no test/sol split.
 - [ ] Aggregate load of task/DSL funcs/type signatures/etc into core, tested util.
