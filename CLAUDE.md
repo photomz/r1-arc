@@ -1,24 +1,21 @@
 # R1-ARC Code Guidelines
 
 ## Build Commands
-- Run main project: `upython src/main.py`
+- Python in uv venv: `upython -m src.{module} --args`
 - Run tests: `upython -m pytest`
-- Run specific test: `upython -m pytest tests.py::test_function_name` 
-- Generate stubs: `make stubs` (in arc-dsl directory)
-- Lint: `ruff check .`
-- Typecheck: `mypy src/`
+- Run specific test: `upython -m pytest -k "glob" ` 
 
-## Code Style
-- Use snake_case for variables/functions, PascalCase for classes, UPPER_CASE for constants
+## Mandatory Code Style
 - Always use type hints with strict mypy configured
-- Prefer dataclasses and class methods for formatting components
+- Always use `dataclass`es or `TypedDicts`s over untyped dicts.
+- Prefer `@classmethod`s and static constructors in dataclasses `DataObject.from_some_format` over funcs that return dataclasses.
+- Any class with internal state must be a dataclass. Prefer pure functions with minimal side effects, over complex object state manipulation.
 - Use enums for named constants and type safety
-- Add Typer functions for rapid testing/debugging
-- Follow clean symmetrical structure with symbolic variable names
+- In every file, attach a Typer app at code logic with most uncertainty, so user can test quickly on cmd line.
 - Write succinct comments only when needed for complex logic
 - Use async patterns consistently with proper error handling
-- Group imports: std lib, third-party, local modules
-- Prefer frozen sets and tuples for immutable data structures
+- Top-level `import`s only, top-level hardcoded data only (lists, dicts). Overriding this needs explicit user approval.
+- Varnames should be very symbolic and succinct: rename `time_to_first_token` -> `t1`.
 
 ## Project Context
 - Research codebase for ARC competition

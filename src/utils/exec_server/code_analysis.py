@@ -18,10 +18,9 @@ from enum import Enum, auto
 
 from pydantic import BaseModel, Field
 from src.utils.devtools import debug
+from src.utils import ROOT
 
-root = Path(__file__).parent
-
-dsl_info = json.load((root.parents[2] / "arc-dsl/out/dsl_typedefs.json").open())
+dsl_info = json.load((ROOT / "src/dsl/out/dsl_typedefs.json").open())
 
 
 class CodeMetrics(BaseModel):

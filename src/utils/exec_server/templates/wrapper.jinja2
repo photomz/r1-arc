@@ -11,11 +11,10 @@ from pathlib import Path
 root = Path(__file__).resolve()
 while not (root / ".git").exists():
     root = root.parent
-sys.path.append(str(root / "arc-dsl"))
 sys.path.append(str(root))
 
-from arc_types import *
-from dsl import *
+from src.dsl.arc_types import *
+from src.dsl.dsl import *
 from src.utils.devtools import verbose_debug as original_verbose_debug
 
 # Custom verbose_debug function to capture and print output
@@ -47,6 +46,7 @@ try:
     results: list[list[list[int]]] = []
     for grid_list in grid_lists:
         # Try to call solve function (preferred) or fall back to transform
+
         if 'solve' in globals():
             result = solve(grid_list)
         else:

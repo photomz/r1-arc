@@ -179,7 +179,9 @@ def cache_key(code: str, grid_lists: List[Any]) -> str:
     return hashlib.md5(serialized.encode()).hexdigest()
 
 
-def parse_transform_results(stdout: str) -> Tuple[Optional[List[List[List[int]]]], List[str]]:
+def parse_transform_results(
+    stdout: str,
+) -> Tuple[Optional[List[List[List[int]]]], List[str]]:
     """
     Parse transform results and debug output from stdout
 
@@ -194,7 +196,7 @@ def parse_transform_results(stdout: str) -> Tuple[Optional[List[List[List[int]]]
     debug("Parsing transform results and debug output from stdout")
     transform_results = None
     debug_outputs = []
-    
+
     if stdout:
         for line in stdout.splitlines():
             if line.startswith("TRANSFORM_RESULT:"):
@@ -210,7 +212,7 @@ def parse_transform_results(stdout: str) -> Tuple[Optional[List[List[List[int]]]
                 debug_message = line.replace("DEBUG_OUTPUT:", "", 1).strip()
                 debug_outputs.append(debug_message)
                 debug(f"Found debug output: {debug_message[:50]}...")
-    
+
     return transform_results, debug_outputs
 
 
@@ -434,7 +436,10 @@ def run_python_transform_sync(
 
     # Create file in src/tmp directory with datetime and hash
     filename = generate_filename(code)
-    file_path = GIT_DIR / "tmp" / filename
+    tmp_dir = GIT_DIR / "tmp"
+    if not tmp_dir.exists():
+        tmp_dir.mkdir(parents=True, exist_ok=True)
+    file_path = tmp_dir / filename
 
     with open(file_path, "w") as f:
         f.write(wrapped_code)
