@@ -30,10 +30,10 @@ from src.code_interpreter.code_analysis import (
     ErrorType,
     format_error,
 )
+from src.utils import ROOT
 
 # Setup Jinja2 environment for templates
 TEMPLATE_DIR = Path(__file__).parent / "templates"
-GIT_DIR = Path(__file__).parents[2]
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(TEMPLATE_DIR),
     trim_blocks=True,
@@ -410,7 +410,7 @@ def run_python_transform_sync(
 
     # Create file in src/tmp directory with datetime and hash
     filename = generate_filename(code)
-    tmp_dir = GIT_DIR / "tmp"
+    tmp_dir = ROOT / "src/tmp"
     if not tmp_dir.exists():
         tmp_dir.mkdir(parents=True, exist_ok=True)
     file_path = tmp_dir / filename
