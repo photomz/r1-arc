@@ -6,7 +6,7 @@ Transformation rules often have multiple components or exceptions. Main rule mig
 
 Write reasoning inside <think></think> tags. Break complex problems into smaller parts. Reason step-by-step with clear sub-conclusions. Avoid large logical leaps. Continue reasoning until transformation rule is completely understood and unambiguous.
 
-Implement as Python function solve(I: Grid) -> Grid where Grid = tuple[tuple[int]]. Function must work for any valid input matching example properties. Write only the solve function in ```py code blocks, no tests.
+Implement as Python 3.12 function solve(I: Grid) -> Grid where Grid = tuple[tuple[int]]. Function must work for any valid input matching example properties. Write only the solve function in ```py code blocks, no tests.
 
 Example rule complexity: "Fill black holes in grey grid with colors based on hole size (1=pink, 2=blue, 3=red)" or "Move red shape toward purple shape until collision" or "AND two 3x3 subgrids separated by grey line, output red where both had blue". Actual rule will differ but demonstrates expected complexity/precision level.
 

@@ -139,19 +139,18 @@ tracer.log_locals(list(locals().items()))"""
 
 
 def inject_logging(code0: str) -> str:
-    # try:
-    # Parse and transform the code
-    module = cst.parse_module(code0)
-    edited_tree = module.visit(LoggingInjector())
 
-    # Verify the transformed code is valid Python
-    code1 = edited_tree.code
-    compile(code1, "<string>", "exec")
-    return code1
+    try:
+        module = cst.parse_module(code0)
+        edited_tree = module.visit(LoggingInjector())
 
-    # except Exception as e:
-    #     debug(str(e))
-    #     return code0
+        # Verify the transformed code is valid Python
+        code1 = edited_tree.code
+        compile(code1, "<string>", "exec")
+        return code1
+    except cst.ParserSyntaxError as e:
+        debug(e)  # Fail silent. Interpreter's burden to catch in `run_ok``
+        return code0
 
 
 @dataclass

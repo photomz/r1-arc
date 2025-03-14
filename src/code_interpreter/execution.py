@@ -134,7 +134,7 @@ class Interpreter:
         # Create wrapped code and save to file
         injected_codestr = inject_logging(codestring)
         wrapped_code = render_template(injected_codestr, inputs)
-        filename = f'{time.strftime("%Y%m%d_%H%M")}-{id}.py'
+        filename = f'{id}-{time.strftime("%Y%m%d_%H%M")}.py'
         tmp_dir = ROOT / "src/tmp"
         tmp_dir.mkdir(parents=True, exist_ok=True)
         file_path = tmp_dir / filename

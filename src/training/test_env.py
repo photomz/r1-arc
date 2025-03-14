@@ -25,9 +25,10 @@
 #     assert (res, metrics) == snapshot
 
 
-from src.utils import TASKS
-from src.training.env import debug_in_terminal
+from src.utils import TASKS, ROOT
+from src.training.env import debug_in_terminal, REWARD_FNS
 import pytest
+import json
 
 train_ids = [t.id for t in TASKS.values() if t.split == "train"]
 
@@ -51,3 +52,14 @@ def test_solver_passes_env_reward(task_id, snapshot):
     r = debug_in_terminal(codestring, task_id)
     assert r is not None
     assert r == snapshot
+
+
+traceback = ROOT / "src/training/traceback.json"
+
+
+def test_reward_args_regression(snapshot):
+    args = json.load(traceback.open())
+
+    kwargs = {k: [v] for k, v in args[2].items()}
+    rs = REWARD_FNS[0](prompts=[args[0]], completions=[args[1]], **kwargs)
+    assert rs == snapshot

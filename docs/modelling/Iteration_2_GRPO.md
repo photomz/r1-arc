@@ -60,3 +60,16 @@ C. GRPO Training Run
 > Good [unsloth](https://docs.unsloth.ai/basics/reasoning-grpo-and-rl), [verifier](https://github.com/willccbb/verifiers/blob/main/verifiers/envs/code_env.py) articles
 
 > Broad idea: Refactor local caller exec, remote vLLM gen -> local vLLM trajectories on cuda:0, Dataset Generator on cpu, halt on ```py to cpu code interpreter; cuda:1-3 is backprop. Rest follows open-r1.
+
+Fri 2am, GRPO training runs on 1xH100, Qwen 7B.
+
+Open-R1 sources good code [repos](https://github.com/huggingface/open-r1/issues/28), [e2b sandbox](https://e2b.dev/) would've been lifesaver earlier (no manual code interpreter?), and [Carlo](https://e2b.dev/) used RLHF?
+
+Need to trace GPU to find if parallelism is done or possible.
+
+Model chose (iter 0) to hide imports in func def and spam import (got stuck). Should add huge repetition penalty:
+```
+    from typing import Callable, Optional, Dict, List, Tuple, Dict, List, Tuple, Optional
+    from typing import Callable, Optional, Dict, List, Tuple, Dict, List, Tuple, Optional
+    from typing import Callable, Optional, Dict, List, Tuple, Dict, List, Tuple, Optional
+```

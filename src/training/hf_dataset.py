@@ -1,6 +1,6 @@
 from datasets import Dataset, DatasetDict, Features, Sequence, Value, load_dataset
 from src.utils.tasks import TASKS, TaskDef
-from src.utils import ROOT
+from src.utils import ROOT, FORMATTERS, FormatterNames, get_shape
 from src.prompts import render_prompt
 from tqdm import tqdm
 from collections import defaultdict
@@ -57,9 +57,12 @@ def create(name="arc_plain", username="photonmz"):
     dataset.push_to_hub(f"{username}/{name}", token=os.getenv("HF_TOKEN"))
 
 
+fmt = FORMATTERS[FormatterNames.SPREADSHEET].format
+
+
 @app.command()
 def load(name="photonmz/arc_plain"):
-    data0 = load_dataset(name)
+    data0 = load_dataset(name).remove_columns(["augment"])
     data0 = data0.map(
         lambda x: {
             "prompt": [
@@ -68,6 +71,7 @@ def load(name="photonmz/arc_plain"):
             **x,
         }
     )
+    print(f"Loaded dataset.")
     return data0
 
 

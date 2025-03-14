@@ -83,8 +83,8 @@ class SpreadsheetFormatter(Formatter):
 
 @dataclass
 class Differ(Formatter):
-    change: str = " -> "
-    blank: str = "  --  "
+    change: str = "->"
+    blank: str = "--"
 
     @classmethod
     def diff(self, A: Grid, B: Grid, A_shape, B_shape) -> str:

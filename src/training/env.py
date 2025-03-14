@@ -2,14 +2,17 @@ import re
 import typer
 import asyncio
 from dotenv import load_dotenv
-from src.code_interpreter.execution import Interpreter, InterpreterOutput
+from src.code_interpreter.execution import Interpreter, InterpreterOutput, pprint
 from src.code_interpreter.static_analysis import StaticMetrics
 from src.prompts import render_prompt, TASKS, Example
 from src.utils.tasks import deep_tuple, TaskDef
-from src.utils import get_shape, FORMATTERS, FormatterNames
+from src.utils import get_shape, FORMATTERS, FormatterNames, ROOT, debug
 from dataclasses import dataclass
+import time
 import numpy as np
+import orjson as json
 import math
+import traceback
 
 load_dotenv()
 
@@ -27,7 +30,7 @@ class FirstSoftReward:
     p1 = 0.1
     p2 = 0.2
     r0 = 0.1
-    r1 = 0.5
+    r1 = 0.7
     r2 = 0.5
     e1 = 5
     c1 = 1
@@ -54,9 +57,10 @@ class FirstSoftReward:
     @classmethod
     def score_exec(cls, out: InterpreterOutput, ex: Example) -> float:
         """Interpreter Output -> R reward."""
+        if not out.run_ok:
+            return 0
         # format, compile, % per example, n correct. Weighted method `score()`
         run_reward = cls.r1 * out.run_ok
-
         r = run_reward
 
         O_hats = out.traces.O
@@ -92,50 +96,83 @@ def extract_python(o) -> str:
     return o.group(1)
 
 
-def reward_exec(prompts, completions, **kwargs) -> list[float]:
-    rewards = []
-    for p, c, k in zip(prompts, completions, kwargs.values()):
-        try:
-            task = TaskDef(**k)
-            codestring = extract_python(c)
+def iterate_kwargs(kw: dict):
+    # Get the length of any list in kwargs (assuming all lists have same length)
+    n = len(list(kw.values())[0])
 
-            if not codestring:
-                debug("No Python", c)
+    # For each index, create a dict with the i-th element of each list
+    return [{k: v[i] for k, v in kw.items()} for i in range(n)]
+
+
+def log_badcode(title, attempt, error):
+    filename = f'{id}-{time.strftime("%Y%m%d_%H%M")}.md'
+    tmp_dir = ROOT / "src/tmp"
+    tmp_dir.mkdir(parents=True, exist_ok=True)
+    fp = tmp_dir / filename
+    
+    with fp.open('w') as f:
+        f.write(f"# {title}, {time.strftime("%Y%m%d_%H%M%S")}\n")
+        f.write(f"## Bad Generation\n{attempt}\n")
+        f.write(f"## Error\n{error}")
+
+
+def guardrail(reward_fn):
+    # args are typedef'd in hf_dataset.py
+    # and HF's GRPOTrainer adds completions, reads prompts.
+    def wrap_r(completions, id, **kwargs) -> list[float]:
+        rewards = []
+        items = (
+            zip(completions, iterate_kwargs({"id": id, **kwargs}))
+            if kwargs
+            else [(c, {}) for c in completions]
+        )
+        for c, kw in items:
+            content = c[0].get("content")
+            
+            try:
+                codestring = extract_python(
+                    c[0]["content"] if isinstance(c, list) else c
+                )
+                if not codestring:
+                    debug("No Python", c[-1]['content'][-100:])
+                    rewards.append(0)
+                    continue
+                    
+                print(id[0])
+                pprint(codestring)
+
+                rewards.append(reward_fn(codestring, **kw))
+            except Exception as e:
+                debug(e)
+                log_badcode(id, content, e + traceback.format_exc())
                 rewards.append(0)
-                continue
+        return rewards
 
-            Is = [t.I for t in task.data]
-            res = Interpreter.run(
-                codestring=codestring, inputs=Is, id=task.id, raise_error=False
-            )
-            print(completions)
-            rewards.append(FirstSoftReward.score_exec(res, task.data))
-
-        except Exception as e:
-            debug(e)  # WARN: Last resort zeros reward, want to catch earlier.
-            rewards.append(0)
-    return rewards
+    return wrap_r
 
 
-def reward_style(completions, **kwargs) -> list[float]:
-    rewards = []
-    for c, k in zip(completions, kwargs.values()):
-        try:
-            codestring = extract_python(c)
-            if not codestring:
-                debug("No Python", c)
-                rewards.append(0)
-                continue
-
-            metrics = StaticMetrics.from_literal(codestring)
-            rewards.append(FirstSoftReward.score_style(metrics))
-        except Exception as e:
-            debug(e)
-            rewards.append(0)
-    return rewards
+# Simplified core reward functions that work with the guardrail
+def reward_exec(codestring: str, **kwargs) -> float:
+    task = TaskDef.from_hf(kwargs)
+    Is = [t.I for t in task.data]
+    res = Interpreter.run(
+        codestring=codestring, inputs=Is, id=task.id, raise_error=False
+    )
+    return FirstSoftReward.score_exec(res, task.data)
 
 
-REWARD_FNS = [reward_exec, reward_style]
+def reward_style(codestring: str, **kwargs) -> float:
+    metrics = StaticMetrics.from_literal(codestring)
+    return FirstSoftReward.score_style(metrics)
+
+# HF gets my reward func name for wandb logging
+# https://github.com/huggingface/trl/blob/fc4dae256d924dfbb906af9c2e817bc6fb7b590b/trl/trainer/grpo_trainer.py#L833
+exec_reward = guardrail(reward_exec)
+exec_reward.__name__ = 'exec'
+style_reward = guardrail(reward_style)
+style_reward.__name__ = 'style'
+
+REWARD_FNS = [exec_reward, style_reward]
 
 
 def debug_in_terminal(o: str, tid="5521c0d9") -> None:

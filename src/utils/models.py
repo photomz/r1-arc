@@ -83,12 +83,12 @@ class Example:
         return (deep_tuple(self.I), deep_tuple(self.O))
 
 
-@dataclass
-class TaskDef:
+class TaskDef(BaseModel):
     id: str
-    split: DatasetSplit
     train: List[Example]
     test: List[Example]
+
+    split: DatasetSplit = "train"
 
     solver: Optional[Callable] = None
     verifier: Optional[Callable] = None
@@ -170,7 +170,6 @@ class TaskDef:
 
         return TaskDef(
             id=x["id"],
-            split="split",
             train=ex["train"],
             test=ex["test"],
         )

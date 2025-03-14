@@ -1,2401 +1,2406 @@
 # serializer version: 1
+# name: test_reward_args_regression
+  list([
+    0,
+  ])
+# ---
 # name: test_solver_passes_env_reward[007bbfb7]
   tuple(
-    11.5,
+    11.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[00d62c1b]
   tuple(
-    11.5,
+    11.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[017c7c7b]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[025d127b]
   tuple(
-    7.0,
+    7.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[045e512c]
   tuple(
-    8.5,
+    8.7,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[0520fde7]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[05269061]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[05f2a901]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[06df4c85]
   tuple(
-    8.5,
+    8.7,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[08ed6ac7]
   tuple(
-    7.0,
+    7.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[09629e4f]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[0962bcdd]
   tuple(
-    7.0,
+    7.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[0a938d79]
   tuple(
-    10.0,
+    10.2,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[0b148d64]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[0ca9ddb6]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[0d3d703e]
   tuple(
-    10.0,
+    10.2,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[0dfd9992]
   tuple(
-    8.5,
+    8.7,
     4.458898943540674,
   )
 # ---
 # name: test_solver_passes_env_reward[0e206a2e]
   tuple(
-    8.5,
+    8.7,
     4.458898943540674,
   )
 # ---
 # name: test_solver_passes_env_reward[10fcaaa3]
   tuple(
-    10.0,
+    10.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[11852cab]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[1190e5a7]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[137eaa0f]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[150deff5]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[178fcbfb]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[1a07d186]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[1b2d62fb]
   tuple(
-    11.5,
+    11.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[1b60fb0c]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[1bfc4729]
   tuple(
-    7.0,
+    7.2,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[1c786137]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[1caeab9d]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[1cf80156]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[1e0a9b12]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[1e32b0e9]
   tuple(
-    8.5,
+    8.7,
     4.895831523312719,
   )
 # ---
 # name: test_solver_passes_env_reward[1f0c79e5]
   tuple(
-    10.0,
+    10.2,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[1f642eb9]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[1f85a75f]
   tuple(
-    7.0,
+    7.2,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[1f876c06]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[1fad071e]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[2013d3e2]
   tuple(
-    7.0,
+    7.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[2204b7a8]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[22168020]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[22233c11]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[2281f1f4]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[228f6490]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[22eb0ac0]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[234bbc79]
   tuple(
-    10.0,
+    10.2,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[23581191]
   tuple(
-    7.0,
+    7.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[239be575]
   tuple(
-    14.5,
+    14.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[23b5c85d]
   tuple(
-    11.5,
+    11.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[253bf280]
   tuple(
-    16.0,
+    16.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[25d487eb]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[25d8a9c8]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[25ff71a9]
   tuple(
-    11.5,
+    11.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[264363fd]
   tuple(
-    8.5,
+    8.7,
     5.1,
   )
 # ---
 # name: test_solver_passes_env_reward[272f95fa]
   tuple(
-    7.0,
+    7.2,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[27a28665]
   tuple(
-    17.5,
+    17.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[28bf18c6]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[28e73c20]
   tuple(
-    11.5,
+    11.7,
     4.342640687119284,
   )
 # ---
 # name: test_solver_passes_env_reward[29623171]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[29c11459]
   tuple(
-    7.0,
+    7.2,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[29ec7d0e]
   tuple(
-    10.0,
+    10.2,
     4.458898943540674,
   )
 # ---
 # name: test_solver_passes_env_reward[2bcee788]
   tuple(
-    10.0,
+    10.2,
     4.998979485566355,
   )
 # ---
 # name: test_solver_passes_env_reward[2bee17df]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[2c608aff]
   tuple(
-    10.0,
+    10.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[2dc579da]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[2dd70a9a]
   tuple(
-    8.5,
+    8.7,
     5.391502622129181,
   )
 # ---
 # name: test_solver_passes_env_reward[2dee498d]
   tuple(
-    8.5,
+    8.7,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[31aa019c]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[321b1fc6]
   tuple(
-    7.0,
+    7.2,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[32597951]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[3345333e]
   tuple(
-    7.0,
+    7.2,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[3428a4f5]
   tuple(
-    11.5,
+    11.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[3618c87e]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[3631a71a]
   tuple(
-    10.0,
+    10.2,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[363442ee]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[36d67576]
   tuple(
-    8.5,
+    8.7,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[36fdfd69]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[3906de3d]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[39a8645d]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[39e1d7f9]
   tuple(
-    8.5,
+    8.7,
     5.1,
   )
 # ---
 # name: test_solver_passes_env_reward[3aa6fb7a]
   tuple(
-    7.0,
+    7.2,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[3ac3eb23]
   tuple(
-    7.0,
+    7.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[3af2c5a8]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[3bd67248]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[3bdb4ada]
   tuple(
-    7.0,
+    7.2,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[3befdf3e]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[3c9b0459]
   tuple(
-    10.0,
+    10.2,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[3de23699]
   tuple(
-    10.0,
+    10.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[3e980e27]
   tuple(
-    10.0,
+    10.2,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[3eda0437]
   tuple(
-    10.0,
+    10.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[3f7978a0]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[40853293]
   tuple(
-    7.0,
+    7.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[4093f84a]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[41e4d17e]
   tuple(
-    7.0,
+    7.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[4258a5f9]
   tuple(
-    7.0,
+    7.2,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[4290ef0e]
   tuple(
-    8.5,
+    8.7,
     4.895831523312719,
   )
 # ---
 # name: test_solver_passes_env_reward[42a50994]
   tuple(
-    10.0,
+    10.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[4347f46a]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[444801d8]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[445eab21]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[447fd412]
   tuple(
-    8.5,
+    8.7,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[44d8ac46]
   tuple(
-    10.0,
+    10.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[44f52bb0]
   tuple(
-    14.5,
+    14.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[4522001f]
   tuple(
-    7.0,
+    7.2,
     4.1,
   )
 # ---
 # name: test_solver_passes_env_reward[4612dd53]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[46442a0e]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[469497ad]
   tuple(
-    8.5,
+    8.7,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[46f33fce]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[47c1f68c]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[484b58aa]
   tuple(
-    8.5,
+    8.7,
     4.458898943540674,
   )
 # ---
 # name: test_solver_passes_env_reward[48d8fb45]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[4938f0c2]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[496994bd]
   tuple(
-    7.0,
+    7.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[49d1d64f]
   tuple(
-    8.5,
+    8.7,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[4be741c5]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[4c4377d9]
   tuple(
-    10.0,
+    10.2,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[4c5c2cf0]
   tuple(
-    8.5,
+    8.7,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[50846271]
   tuple(
-    10.0,
+    10.2,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[508bd3b6]
   tuple(
-    8.5,
+    8.7,
     4.6825756949558395,
   )
 # ---
 # name: test_solver_passes_env_reward[50cb2852]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[5117e062]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[5168d44c]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[539a4f51]
   tuple(
-    8.5,
+    8.7,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[53b68214]
   tuple(
-    10.0,
+    10.2,
     4.342640687119284,
   )
 # ---
 # name: test_solver_passes_env_reward[543a7ed5]
   tuple(
-    7.0,
+    7.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[54d82841]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[54d9e175]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[5521c0d9]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[5582e5ca]
   tuple(
-    8.5,
+    8.7,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[5614dbcf]
   tuple(
-    7.0,
+    7.2,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[56dc2b01]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[56ff96f3]
   tuple(
-    10.0,
+    10.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[57aa92db]
   tuple(
-    10.0,
+    10.2,
     4.1,
   )
 # ---
 # name: test_solver_passes_env_reward[5ad4f10b]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[5bd6f4ac]
   tuple(
-    10.0,
+    10.2,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[5c0a986e]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[5c2c9af4]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[5daaa586]
   tuple(
-    8.5,
+    8.7,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[60b61512]
   tuple(
-    7.0,
+    7.2,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[6150a2bd]
   tuple(
-    7.0,
+    7.2,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[623ea044]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[62c24649]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[63613498]
   tuple(
-    8.5,
+    8.7,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[6430c8c4]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[6455b5f5]
   tuple(
-    10.0,
+    10.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[662c240a]
   tuple(
-    10.0,
+    10.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[67385a82]
   tuple(
-    10.0,
+    10.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[673ef223]
   tuple(
-    8.5,
+    8.7,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[6773b310]
   tuple(
-    10.0,
+    10.2,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[67a3c6ac]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[67a423a3]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[67e8384a]
   tuple(
-    10.0,
+    10.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[681b3aeb]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[6855a6e4]
   tuple(
-    8.5,
+    8.7,
     5.199019513592784,
   )
 # ---
 # name: test_solver_passes_env_reward[68b16354]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[694f12f3]
   tuple(
-    7.0,
+    7.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[6a1e5592]
   tuple(
-    7.0,
+    7.2,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[6aa20dc0]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[6b9890af]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[6c434453]
   tuple(
-    7.0,
+    7.2,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[6cdd2623]
   tuple(
-    8.5,
+    8.7,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[6cf79266]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[6d0160f0]
   tuple(
-    10.0,
+    10.2,
     4.458898943540674,
   )
 # ---
 # name: test_solver_passes_env_reward[6d0aefbc]
   tuple(
-    10.0,
+    10.2,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[6d58a25d]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[6d75e8bb]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[6e02f1e3]
   tuple(
-    11.5,
+    11.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[6e19193c]
   tuple(
-    7.0,
+    7.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[6e82a1ae]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[6ecd11f4]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[6f8cd79b]
   tuple(
-    10.0,
+    10.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[6fa7a44f]
   tuple(
-    10.0,
+    10.2,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[72322fa7]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[72ca375d]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[73251a56]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[7447852a]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[7468f01a]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[746b3537]
   tuple(
-    11.5,
+    11.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[74dd1130]
   tuple(
-    10.0,
+    10.2,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[75b8110e]
   tuple(
-    11.5,
+    11.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[760b3cac]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[776ffc46]
   tuple(
-    10.0,
+    10.2,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[77fdfe62]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[780d0b14]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[7837ac64]
   tuple(
-    10.0,
+    10.2,
     4.790415759823429,
   )
 # ---
 # name: test_solver_passes_env_reward[794b24be]
   tuple(
-    20.5,
+    20.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[7b6016b9]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[7b7f7511]
   tuple(
-    8.5,
+    8.7,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[7c008303]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[7ddcd7ec]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[7df24a62]
   tuple(
-    10.0,
+    10.2,
     4.572135954999579,
   )
 # ---
 # name: test_solver_passes_env_reward[7e0986d6]
   tuple(
-    7.0,
+    7.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[7f4411dc]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[7fe24cdd]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[80af3007]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[810b9b61]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[82819916]
   tuple(
-    10.0,
+    10.2,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[83302e8f]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[834ec97d]
   tuple(
-    8.5,
+    8.7,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[8403a5d5]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[846bdb03]
   tuple(
-    10.0,
+    10.2,
     4.1,
   )
 # ---
 # name: test_solver_passes_env_reward[855e0971]
   tuple(
-    10.0,
+    10.2,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[85c4e7cd]
   tuple(
-    10.0,
+    10.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[868de0fa]
   tuple(
-    11.5,
+    11.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[8731374e]
   tuple(
-    8.5,
+    8.7,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[88a10436]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[88a62173]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[890034e9]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[8a004b2b]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[8be77c9e]
   tuple(
-    8.5,
+    8.7,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[8d5021e8]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[8d510a79]
   tuple(
-    7.0,
+    7.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[8e1813be]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[8e5a5113]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[8eb1be9a]
   tuple(
-    7.0,
+    7.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[8efcae92]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[8f2ea7aa]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[90c28cc7]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[90f3ed37]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[913fb3ed]
   tuple(
-    10.0,
+    10.2,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[91413438]
   tuple(
-    10.0,
+    10.2,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[91714a58]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[9172f3a0]
   tuple(
-    7.0,
+    7.2,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[928ad970]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[93b581b8]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[941d9a10]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[94f9d214]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[952a094c]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[9565186b]
   tuple(
-    10.0,
+    10.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[95990924]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[963e52fc]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[97999447]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[97a05b5b]
   tuple(
-    8.5,
+    8.7,
     4.342640687119284,
   )
 # ---
 # name: test_solver_passes_env_reward[98cf29f8]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[995c5fa3]
   tuple(
-    10.0,
+    10.2,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[99b1bc43]
   tuple(
-    10.0,
+    10.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[99fa7670]
   tuple(
-    10.0,
+    10.2,
     4.1,
   )
 # ---
 # name: test_solver_passes_env_reward[9aec4887]
   tuple(
-    8.5,
+    8.7,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[9af7a82c]
   tuple(
-    10.0,
+    10.2,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[9d9215db]
   tuple(
-    8.5,
+    8.7,
     4.6825756949558395,
   )
 # ---
 # name: test_solver_passes_env_reward[9dfd6313]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[9ecd008a]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[9edfc990]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[9f236235]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[a1570a43]
   tuple(
-    10.0,
+    10.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[a2fd1cf0]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[a3325580]
   tuple(
-    13.0,
+    13.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[a3df8b1e]
   tuple(
-    8.5,
+    8.7,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[a416b8f3]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[a48eeaf7]
   tuple(
-    7.0,
+    7.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[a5313dff]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[a5f85a15]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[a61ba2ce]
   tuple(
-    7.0,
+    7.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[a61f2674]
   tuple(
-    7.0,
+    7.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[a64e4611]
   tuple(
-    8.5,
+    0,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[a65b410d]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[a68b268e]
   tuple(
-    13.0,
+    13.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[a699fb00]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[a740d043]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[a78176bb]
   tuple(
-    8.5,
+    8.7,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[a79310a0]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[a85d4709]
   tuple(
-    10.0,
+    10.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[a87f7484]
   tuple(
-    10.0,
+    10.2,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[a8c38be5]
   tuple(
-    7.0,
+    7.2,
     4.6825756949558395,
   )
 # ---
 # name: test_solver_passes_env_reward[a8d7556c]
   tuple(
-    8.5,
+    8.7,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[a9f96cdd]
   tuple(
-    10.0,
+    10.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[aabf363d]
   tuple(
-    7.0,
+    7.2,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[aba27056]
   tuple(
-    8.5,
+    8.7,
     4.458898943540674,
   )
 # ---
 # name: test_solver_passes_env_reward[ac0a08a4]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[ae3edfdc]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[ae4f1146]
   tuple(
-    10.0,
+    10.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[aedd82e4]
   tuple(
-    10.0,
+    10.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[af902bf9]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[b0c4d837]
   tuple(
-    13.0,
+    13.2,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[b190f7f5]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[b1948b0a]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[b230c067]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[b27ca6d3]
   tuple(
-    7.0,
+    7.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[b2862040]
   tuple(
-    10.0,
+    10.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[b527c5c6]
   tuple(
-    10.0,
+    10.2,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[b548a754]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[b60334d2]
   tuple(
-    7.0,
+    7.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[b6afb2da]
   tuple(
-    7.0,
+    7.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[b7249182]
   tuple(
-    8.5,
+    8.7,
     5.1,
   )
 # ---
 # name: test_solver_passes_env_reward[b775ac94]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[b782dc8a]
   tuple(
-    7.0,
+    7.2,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[b8825c91]
   tuple(
-    10.0,
+    10.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[b8cdaf2b]
   tuple(
-    10.0,
+    10.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[b91ae062]
   tuple(
-    11.5,
+    11.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[b94a9452]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[b9b7f026]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[ba26e723]
   tuple(
-    11.5,
+    11.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[ba97ae07]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[bb43febb]
   tuple(
-    7.0,
+    7.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[bbc9ae5d]
   tuple(
-    11.5,
+    11.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[bc1d5164]
   tuple(
-    11.5,
+    11.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[bd4472b8]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[bda2d7a6]
   tuple(
-    10.0,
+    10.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[bdad9b1f]
   tuple(
-    7.0,
+    7.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[be94b721]
   tuple(
-    10.0,
+    10.2,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[beb8660c]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[c0f76784]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[c1d99e64]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[c3e719e8]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[c3f564a4]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[c444b776]
   tuple(
-    7.0,
+    7.2,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[c59eb873]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[c8cbb738]
   tuple(
-    8.5,
+    8.7,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[c8f0f002]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[c909285e]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[c9e6f938]
   tuple(
-    8.5,
+    8.7,
     1.5142135623730952,
   )
 # ---
 # name: test_solver_passes_env_reward[c9f8e694]
   tuple(
-    7.0,
+    7.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[caa06a1f]
   tuple(
-    8.5,
+    8.7,
     4.342640687119284,
   )
 # ---
 # name: test_solver_passes_env_reward[cbded52d]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[cce03e0d]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[cdecee7f]
   tuple(
-    8.5,
+    8.7,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[ce22a75a]
   tuple(
-    7.0,
+    7.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[ce4f8723]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[ce602527]
   tuple(
-    10.0,
+    10.2,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[ce9e57f2]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[cf98881b]
   tuple(
-    11.5,
+    11.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[d037b0a7]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[d06dbe63]
   tuple(
-    7.0,
+    7.2,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[d07ae81c]
   tuple(
-    8.5,
+    8.7,
     4.6825756949558395,
   )
 # ---
 # name: test_solver_passes_env_reward[d0f5fe59]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[d10ecb37]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[d13f3404]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[d22278a0]
   tuple(
-    10.0,
+    10.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[d23f8c26]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[d2abd087]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[d364b489]
   tuple(
-    7.0,
+    7.2,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[d406998b]
   tuple(
-    10.0,
+    10.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[d43fd935]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[d4469b4b]
   tuple(
-    16.0,
+    16.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[d4a91cb9]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[d4f3cd78]
   tuple(
-    7.0,
+    7.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[d511f180]
   tuple(
-    8.5,
+    8.7,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[d5d6de2d]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[d631b094]
   tuple(
-    10.0,
+    10.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[d687bc17]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[d6ad076f]
   tuple(
-    8.5,
+    8.7,
     3.972983346207417,
   )
 # ---
 # name: test_solver_passes_env_reward[d89b689b]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[d8c310e9]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[d90796e8]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[d9f24cd1]
   tuple(
-    7.0,
+    7.2,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[d9fac9be]
   tuple(
-    10.0,
+    10.2,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[dae9d2b5]
   tuple(
-    13.0,
+    13.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[db3e9e38]
   tuple(
-    7.0,
+    7.2,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[db93a21d]
   tuple(
-    10.0,
+    10.2,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[dbc1a6ce]
   tuple(
-    10.0,
+    10.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[dc0a314f]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[dc1df850]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[dc433765]
   tuple(
-    16.0,
+    16.2,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[ddf7fa4f]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[de1cd16c]
   tuple(
-    10.0,
+    10.2,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[ded97339]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[e179c5f4]
   tuple(
-    8.5,
+    8.7,
     4.1,
   )
 # ---
 # name: test_solver_passes_env_reward[e21d9049]
   tuple(
-    7.0,
+    7.2,
     4.22310562561766,
   )
 # ---
 # name: test_solver_passes_env_reward[e26a3af2]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[e3497940]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[e40b9e2f]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[e48d4e1a]
   tuple(
-    10.0,
+    10.2,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[e5062a87]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[e509e548]
   tuple(
-    8.5,
+    8.7,
     3.1,
   )
 # ---
 # name: test_solver_passes_env_reward[e50d258f]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[e6721834]
   tuple(
-    8.5,
+    8.7,
     4.342640687119284,
   )
 # ---
 # name: test_solver_passes_env_reward[e73095fd]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[e76a88a6]
   tuple(
-    7.0,
+    7.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[e8593010]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[e8dc4411]
   tuple(
-    8.5,
+    8.7,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[e9614598]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[e98196ab]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[e9afcf9a]
   tuple(
-    7.0,
+    7.2,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[ea32f347]
   tuple(
-    10.0,
+    10.2,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[ea786f4a]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[eb281b96]
   tuple(
-    7.0,
+    7.2,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[eb5a1d5d]
   tuple(
-    8.5,
+    8.7,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[ec883f72]
   tuple(
-    10.0,
+    10.2,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[ecdecbb3]
   tuple(
-    8.5,
+    8.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[ed36ccf7]
   tuple(
-    10.0,
+    10.2,
     1.1,
   )
 # ---
 # name: test_solver_passes_env_reward[ef135b50]
   tuple(
-    8.5,
+    8.7,
     3.705551275463989,
   )
 # ---
 # name: test_solver_passes_env_reward[f15e1fac]
   tuple(
-    8.5,
+    8.7,
     4.895831523312719,
   )
 # ---
 # name: test_solver_passes_env_reward[f1cefba8]
   tuple(
-    8.5,
+    8.7,
     4.790415759823429,
   )
 # ---
 # name: test_solver_passes_env_reward[f25fbde4]
   tuple(
-    8.5,
+    8.7,
     2.1,
   )
 # ---
 # name: test_solver_passes_env_reward[f25ffba3]
   tuple(
-    7.0,
+    7.2,
     1.8320508075688773,
   )
 # ---
 # name: test_solver_passes_env_reward[f2829549]
   tuple(
-    11.5,
+    11.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[f35d900a]
   tuple(
-    10.0,
+    10.2,
     3.8416573867739414,
   )
 # ---
 # name: test_solver_passes_env_reward[f5b8619d]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[f76d97a5]
   tuple(
-    8.5,
+    8.7,
     2.33606797749979,
   )
 # ---
 # name: test_solver_passes_env_reward[f8a8fe49]
   tuple(
-    8.5,
+    8.7,
     4.342640687119284,
   )
 # ---
 # name: test_solver_passes_env_reward[f8b3ba0a]
   tuple(
-    10.0,
+    10.2,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[f8c80d96]
   tuple(
-    8.5,
+    8.7,
     3.5641016151377545,
   )
 # ---
 # name: test_solver_passes_env_reward[f8ff0b80]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[f9012d9b]
   tuple(
-    8.5,
+    8.7,
     4.342640687119284,
   )
 # ---
 # name: test_solver_passes_env_reward[fafffa47]
   tuple(
-    11.5,
+    11.7,
     2.745751311064591,
   )
 # ---
 # name: test_solver_passes_env_reward[fcb5c309]
   tuple(
-    8.5,
+    8.7,
     2.9284271247461904,
   )
 # ---
 # name: test_solver_passes_env_reward[fcc82909]
   tuple(
-    8.5,
+    8.7,
     2.549489742783178,
   )
 # ---
 # name: test_solver_passes_env_reward[feca6190]
   tuple(
-    11.5,
+    11.7,
     3.4166247903554,
   )
 # ---
 # name: test_solver_passes_env_reward[ff28f65a]
   tuple(
-    19.0,
+    19.2,
     3.2622776601683796,
   )
 # ---
 # name: test_solver_passes_env_reward[ff805c23]
   tuple(
-    8.5,
+    8.7,
     2.745751311064591,
   )
 # ---
