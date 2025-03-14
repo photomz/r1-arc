@@ -28,27 +28,27 @@ A. Code Interpreter.
 - [x] Aggregate load of task/DSL funcs/type signatures/etc into core, tested util. 2am
 - [x] MVP1: func(io) trace 1 string literal func
 - [x] MVP2: func(io) trace of any solver_* in Typer (WIP)
-- [ ] vardiff is purefunc of DSLFunctionCall in new `differ.py`
+- [/] vardiff is purefunc of DSLFunctionCall in new `differ.py`
 - [x] Fuse types in dsl,src.
 - [x] -> vardiff w any grid view
-- [ ] Good dataclass format of tracer stats
+- [x] Good dataclass format of tracer stats
 - [x] MVP3: vardiff trace of any solver_*
-- [ ] MVP4: trace any DSL fp w dataclass stats in JSON file
-- [ ] MVP5: choice of arbitrary formatter for prompt iter
-- [ ] Bonus: Live shell interpreter w `load(task)`, `dump(stats)`, `clear`, `help`, `man(func)`
+- [x] MVP4: trace any DSL fp w dataclass stats in JSON file
+- [x] MVP5: choice of arbitrary formatter for prompt iter
+- [/] Bonus: Live shell interpreter w `load(task)`, `dump(stats)`, `clear`, `help`, `man(func)`
   
 B. sLM Baseline 8pm (7am)
 > 2h/16 = 8m each.
-- [ ] Github find vLLM script for 2.5B, 1xA100.
-- [ ] Batch gen on same input
-- [ ] ngrok API w OpenAI-mocked interface
-- [ ] Override Provider `complete` for raw arequests
-- [ ] MVP1: Prompt 'Hello world' from local
-- [ ] Sanitize `evolutionary` prompts to call DSL
-- [ ] Good grid format for id.
-- [ ] MVP2: Prompt sLM to o DSL literal
-- [ ] ```py format reward 
-- [ ] Pipe to tempfile, use A.MVP4
+- [x] Github find vLLM script for 2.5B, 1xA100.
+- [/] Batch gen on same input
+- [x] ngrok API w OpenAI-mocked interface
+- [x] Override Provider `complete` for raw arequests
+- [x] MVP1: Prompt 'Hello world' from local
+- [x] Sanitize `evolutionary` prompts to call DSL
+- [x] Good grid format for id.
+- [x] MVP2: Prompt sLM to o DSL literal
+- [x] ```py format reward 
+- [x] Pipe to tempfile, use A.MVP4
 - [ ] MVP3: 1 <tool_response> from gen vLLM
 - [ ] Reward dataclass: format, compile, % per example, n correct. Weighted method `score()` 
 - [ ] Prompt sLM to rethink from tool call

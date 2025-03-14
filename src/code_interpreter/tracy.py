@@ -3,17 +3,17 @@ from src.dsl.constants import *
 from src.dsl.dsl import *
 from src.dsl.main import get_data
 
-from viztracer import log_sparse, VizTracer
+# from viztracer import log_sparse, VizTracer
 import json
 import tempfile
 import sys
 
 
-class VarTracer(VizTracer):
+class VarTracer:  # (VizTracer):
     def __init__(self, *args, **kwargs):
-        super().__init__(
-            *args, log_func_args=True, log_func_retval=True, log_print=True, **kwargs
-        )
+        # super().__init__(
+        #     *args, log_func_args=True, log_func_retval=True, log_print=True, **kwargs
+        # )
         self.vartraces = []
 
     def log_locals(self, locale):

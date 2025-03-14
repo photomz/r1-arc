@@ -11,6 +11,7 @@ import time
 from dotenv import load_dotenv
 from functools import cached_property
 from tenacity import retry, stop_after_attempt, wait_exponential
+from src.prompts import render_prompt, TASKS
 
 load_dotenv()
 
@@ -35,11 +36,15 @@ class ModelName(str, Enum):
     HYPERBOLIC_R1 = "deepseek-ai/DeepSeek-R1"
     # HYPERBOLIC_R1_ZERO = "deepseek-ai/DeepSeek-R1-Zero"
 
+    # Self-host any HF host on vLLM
+    R1_QWEN_7B = "unsloth/DeepSeek-R1-Distill-Qwen-14B"
+
 
 class ProviderName(str, Enum):
     DEEPSEEK_CHINA = "deepseek"
     GROQ = "groq"
     HYPERBOLIC = "hyperbolic"
+    VLLM = "vllm"
 
 
 @dataclass
@@ -134,6 +139,7 @@ class Provider:
     @cached_property
     def client(self) -> AsyncOpenAI:
         """All supported providers are OpenAI-compatible, so far"""
+        debug(os.environ[self.env_key])
         return AsyncOpenAI(api_key=os.environ[self.env_key], base_url=self.base_url)
 
     @classmethod
@@ -217,9 +223,11 @@ class Provider:
 
             if stream:
                 params["stream"] = True
-                params["stream_options"] = {
-                    "include_usage": True
-                }  # TODO: Same Providers don't support this kwarg?
+                if model != ModelName.R1_QWEN_7B:
+                    params["stream_options"] = {
+                        "include_usage": True
+                    }  # TODO: Same Providers don't support this kwarg?
+            debug(params)
             response = await self.client.chat.completions.create(
                 messages=messages, **params
             )
@@ -303,42 +311,27 @@ class Hyperbolic(Provider):
     supports_cache: bool = field(default=False)
 
 
-# CLI app for testing
-app = typer.Typer()
+@dataclass
+class vLLM(Provider):
+    name: ProviderName = field(default=ProviderName.VLLM)
+    models: list[ModelName] = field(
+        default_factory=lambda: [
+            ModelName.R1_QWEN_7B,
+        ]
+    )
+    env_key: str = field(default="STUB")
+    base_url: str = field(default="http://localhost:8000/v1")
+    model_prices: Dict[ModelName, Price] = field(
+        default_factory=lambda: {
+            ModelName.R1_QWEN_7B: Price(input=0, output=0),
+        }
+    )
+    supports_cache: bool = field(default=True)
+
 
 providers: dict[ProviderName, Provider] = {
     ProviderName.DEEPSEEK_CHINA: DeepSeekChina(),
     ProviderName.GROQ: Groq(),
     ProviderName.HYPERBOLIC: Hyperbolic(),
+    ProviderName.VLLM: vLLM(),
 }
-
-
-@app.command()
-def prompt(
-    text: str = "Howdy, sir",
-    provider: ProviderName = ProviderName.DEEPSEEK_CHINA,
-    model: ModelName = ModelName.DEEPSEEK_REASONER,
-    stream: bool = True,
-):
-    messages = [
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": text},
-    ]
-
-    params = {
-        "temperature": 0.7,
-        "top_p": 0.95,
-    }
-
-    async def run():
-        # debug("Calling", model)
-        response = await providers[provider].complete(
-            messages, stream=stream, model=model, params=params
-        )
-        debug(response)
-
-    asyncio.run(run())
-
-
-if __name__ == "__main__":
-    app()

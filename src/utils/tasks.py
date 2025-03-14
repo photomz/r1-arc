@@ -4,19 +4,13 @@ import src.dsl.solvers as solvers_module
 import src.re_arc.verifiers as verifiers_module
 import src.re_arc.generators as generators_module
 
-from src.utils import ROOT
+from src.utils.types import ROOT
 import orjson as json
 import inspect
 from src.utils.models import Example, TaskDef
-
+from src.utils.types import deep_tuple
 
 DATA_DIR = ROOT / "src/data"
-
-
-def deep_tuple(a: Any) -> Any:
-    if isinstance(a, list):
-        return tuple(deep_tuple(x) for x in a)
-    return a
 
 
 def get_tasks() -> Dict[str, TaskDef]:

@@ -15,3 +15,7 @@ pytest () {
 }
 
 export BETTER_EXCEPTIONS=1
+
+demo() {
+    upython -m src.providers.cli --id 1f642eb9
+}

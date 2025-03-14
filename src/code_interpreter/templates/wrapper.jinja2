@@ -11,7 +11,7 @@ sys.path.append(str(ROOT))
 
 try:
     # Code Interpreter utils: tracer
-    from viztracer import log_sparse
+    # from viztracer import log_sparse
     from src.code_interpreter.tracy import VarTracer
     # DSL
     from src.dsl.arc_types import *
@@ -36,9 +36,9 @@ try:
     
     Os = []
     for I in Is:
-        tracer.start()
+        # tracer.start()
         O = solve(I)
-        tracer.export()
+        # tracer.export()
         Os.append(O)
 
     data = {

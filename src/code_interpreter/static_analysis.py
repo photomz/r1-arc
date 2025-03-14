@@ -24,13 +24,14 @@ class StaticMetrics(BaseModel):
     """AST static analysis of generated code literal"""
 
     n_lines: int = 0
-    avg_line_length: float = 0
-    n_if: int = 0
+    n_branch: int = 0
     n_loop: int = 0
     n_returns: int = 0
-    dsl_primitives: Set[str] = Field(default_factory=set)
+    n_funcs: int = 0
+    n_dsl: Set[str] = Field(default_factory=set)
     imports: Set[str] = Field(default_factory=set)
     syntax_ok: bool = False
+    # No error (str, code), has trace, same len I, O, intermediates
     run_ok: bool = False
     format_ok: bool = False
 
@@ -64,8 +65,10 @@ def add_node(
 
     # Count specific constructs
     match node:
-        case ast.If():
-            metrics.n_if += 1
+        case ast.FunctionDef():
+            metrics.n_funcs += 1
+        case ast.If() | ast.Match() | ast.Try():
+            metrics.n_branch += 1
         case ast.For() | ast.While():
             metrics.n_loop += 1
         case ast.Return():
@@ -80,7 +83,7 @@ def add_node(
                 isinstance(node.func, ast.Name)
                 and (fid := node.func.id) in dsl_functions
             ):
-                metrics.dsl_primitives.add(fid)
+                metrics.n_dsl.add(fid)
         case _:
             pass
     return metrics
@@ -130,7 +133,7 @@ tracer.log_locals(list(locals().items()))"""
 
         # Update function with decorator and new body
         return updated_node.with_changes(
-            decorators=[decorator, *updated_node.decorators],
+            # decorators=[decorator, *updated_node.decorators],
             body=updated_node.body.with_changes(body=new_body),
         )
 
@@ -153,7 +156,7 @@ def inject_logging(code0: str) -> str:
 
 @dataclass
 class SolveFunctionValidator(cst.CSTVisitor):
-    """Validates a solve function using libcst visitor pattern."""
+    """A valid solver is of type solve: I -> O, and not redefined."""
 
     def __init__(self):
         super().__init__()

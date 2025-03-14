@@ -2,12 +2,11 @@ from src.dsl.arc_types import Shape
 from pathlib import Path
 import orjson
 import dataclasses
+from src.utils.devtools import debug
+from src.utils.types import deep_tuple
+from src.utils.tasks import TASKS
 from src.utils.grid import FORMATTERS, FormatterNames
-
-# root is recurse until .git found
-ROOT = Path(__file__).resolve().parents[0]
-while not (ROOT / ".git").exists():
-    ROOT = ROOT.parent
+from src.utils.types import ROOT
 
 
 def serialize(obj) -> str:

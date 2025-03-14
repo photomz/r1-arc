@@ -34,12 +34,14 @@ echo "Installing additional dependencies..."
 uv add numpy accelerate==1.4.0 bitsandbytes==0.45.3 peft==0.14.0 trl==0.15.2
 
 # Install Unsloth from GitHub
-echo "Installing Unsloth...!"
+echo "Installing from uv.lock"
 
 # Ensure setuptools is installed to prevent import errors
 uv add setuptools
 
 uv sync
+uv sync --group dev
+uv sync --group remote
 
 # Install Unsloth Zoo
 # uv pip install --upgrade --force-reinstall unsloth==2025.3.10 unsloth_zoo

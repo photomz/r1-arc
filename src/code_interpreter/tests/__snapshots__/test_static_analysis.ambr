@@ -1,6 +1,69 @@
 # serializer version: 1
 # name: test_ast
-  StaticMetrics(n_lines=8, avg_line_length=0, n_if=0, n_loop=0, n_returns=1, dsl_primitives={'astuple', 'hconcat', 'hmirror', 'crop'}, imports=set(), syntax_ok=True, run_ok=False, format_ok=False)
+  StaticMetrics(n_lines=20, n_branch=1, n_loop=1, n_returns=4, n_funcs=4, dsl_primitives={'astuple', 'hmirror', 'crop', 'hconcat'}, imports=set(), syntax_ok=True, run_ok=False, format_ok=False)
+# ---
+# name: test_cst[def foo():\n    pass\n    \ndef bar():\n    return foo\n    \ndef foobar():\n    while _ in range(10):\n        if _ % 4:\n            return _\n    return 0 # Dead\n\ndef solve_e9afcf9a(I):\n    x1 = astuple(TWO, ONE)\n    x2 = crop(I, ORIGIN, x1)\n    x3 = hmirror(x2)\n    x4 = hconcat(x2, x3)\n    x5 = hconcat(x4, x4)\n    O = hconcat(x5, x4)\n    return O]
+  '''
+  @log_sparse(stack_depth=10)
+  def foo():
+      pass
+      
+      tracer.log_locals(list(locals().items()))
+      
+  @log_sparse(stack_depth=10)
+  def bar():
+      
+      tracer.log_locals(list(locals().items()))
+      return foo
+      
+  @log_sparse(stack_depth=10)
+  def foobar():
+      while _ in range(10):
+          if _ % 4:
+              return _
+      
+      tracer.log_locals(list(locals().items()))
+      return 0 # Dead
+  
+  @log_sparse(stack_depth=10)
+  def solve_e9afcf9a(I):
+      x1 = astuple(TWO, ONE)
+      x2 = crop(I, ORIGIN, x1)
+      x3 = hmirror(x2)
+      x4 = hconcat(x2, x3)
+      x5 = hconcat(x4, x4)
+      O = hconcat(x5, x4)
+      
+      tracer.log_locals(list(locals().items()))
+      return O
+  '''
+# ---
+# name: test_cst[def foo():\n    pass\n    \ndef bar():\n    return foo\n\ndef solve_e9afcf9a(I):\n    x1 = astuple(TWO, ONE)\n    x2 = crop(I, ORIGIN, x1)\n    x3 = hmirror(x2)\n    x4 = hconcat(x2, x3)\n    x5 = hconcat(x4, x4)\n    O = hconcat(x5, x4)\n    return O]
+  '''
+  @log_sparse(stack_depth=10)
+  def foo():
+      pass
+      
+      tracer.log_locals(list(locals().items()))
+      
+  @log_sparse(stack_depth=10)
+  def bar():
+      
+      tracer.log_locals(list(locals().items()))
+      return foo
+  
+  @log_sparse(stack_depth=10)
+  def solve_e9afcf9a(I):
+      x1 = astuple(TWO, ONE)
+      x2 = crop(I, ORIGIN, x1)
+      x3 = hmirror(x2)
+      x4 = hconcat(x2, x3)
+      x5 = hconcat(x4, x4)
+      O = hconcat(x5, x4)
+      
+      tracer.log_locals(list(locals().items()))
+      return O
+  '''
 # ---
 # name: test_cst[def solve_e9afcf9a(I):\n    x1 = astuple(TWO, ONE)\n    x2 = crop(I, ORIGIN, x1)\n    x3 = hmirror(x2)\n    x4 = hconcat(x2, x3)\n    x5 = hconcat(x4, x4)\n    O = hconcat(x5, x4)\n    return O]
   '''
@@ -13,8 +76,7 @@
       x5 = hconcat(x4, x4)
       O = hconcat(x5, x4)
       
-      for name, value in locals().items():
-          tracer.log_var(name, value)
+      tracer.log_locals(list(locals().items()))
       return O
   '''
 # ---
@@ -25,8 +87,10 @@
   def solve(I):
       O = vmirror(I)
       
-      for name, value in locals().items():
-          tracer.log_var(name, value)
+      tracer.log_locals(list(locals().items()))
       return O
   '''
+# ---
+# name: test_qwen_regression
+  StaticMetrics(n_lines=16, n_branch=1, n_loop=3, n_returns=1, n_funcs=1, dsl_primitives={'ofcolor', 'shape', 'fill', 'canvas'}, imports=set(), syntax_ok=True, run_ok=False, format_ok=True)
 # ---

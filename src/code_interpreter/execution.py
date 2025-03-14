@@ -75,10 +75,9 @@ class TracerOutput:
 class InterpreterOutput:
     response: SubprocessResponse
     traces: TracerOutput
-    metrics: StaticMetrics
-    latency_ms: float
     codestring: str
     inputs: Any
+    run_ok: bool = False
 
 
 def render_template(code: str, input_data: Any) -> str:
@@ -132,12 +131,9 @@ class Interpreter:
     ) -> InterpreterOutput:
         """Execute Python code with transform function and return results"""
 
-        metrics = StaticMetrics.from_literal(codestring)
-        start = time.time()
-
         # Create wrapped code and save to file
-        codestring = inject_logging(codestring)
-        wrapped_code = render_template(codestring, inputs)
+        injected_codestr = inject_logging(codestring)
+        wrapped_code = render_template(injected_codestr, inputs)
         filename = f'{time.strftime("%Y%m%d_%H%M")}-{id}.py'
         tmp_dir = ROOT / "src/tmp"
         tmp_dir.mkdir(parents=True, exist_ok=True)
@@ -164,10 +160,9 @@ class Interpreter:
                 raise RuntimeError(res.stderr)
 
         if not traces:
-            debug(codestring)
+            debug(injected_codestr)
 
-        latency_ms = (time.time() - start) * 1000
-        metrics.run_ok = (
+        run_ok = (
             not res.stderr  # no error str
             and res.return_code == 0  # no error code
             and traces  # read trace
@@ -179,15 +174,14 @@ class Interpreter:
             == len(traces.intermediates)  # io len match
         )
 
-        if metrics.run_ok and cleanup:
+        if run_ok and cleanup:
             os.unlink(file_path)
             os.unlink(tracefp)
 
         return InterpreterOutput(
             response=res,
             traces=traces,
-            metrics=metrics,
-            latency_ms=latency_ms,
+            run_ok=run_ok,
             codestring=codestring,
             inputs=inputs,
         )

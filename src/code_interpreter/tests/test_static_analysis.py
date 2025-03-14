@@ -7,6 +7,18 @@ from src.code_interpreter.static_analysis import (
 import pytest
 
 code = """
+def foo():
+    pass
+    
+def bar():
+    return foo
+    
+def foobar():
+    while _ in range(10):
+        if _ % 4:
+            return _
+    return 0 # Dead
+
 def solve_e9afcf9a(I):
     x1 = astuple(TWO, ONE)
     x2 = crop(I, ORIGIN, x1)
@@ -28,7 +40,10 @@ STRINGS = [code, f_67a3c6ac]
 
 def test_ast(snapshot):
     """Should meter syntax by AST"""
-    return StaticMetrics.from_literal(code) == snapshot
+    m = StaticMetrics.from_literal(code)
+    assert m.n_funcs == 4
+    assert m.n_returns == 4
+    assert m == snapshot
 
 
 @pytest.mark.parametrize("code", STRINGS)
@@ -213,3 +228,27 @@ def solve(x):
 #     code = """def solve(x):\n    return "\\"\nexec('import os; os.system(\\"rm -rf /\\")')\n#"""
 #     result = inject_logging(code)
 #     assert "exec(" not in result or "os.system" not in result
+
+qwen_repr = """
+def solve(I):
+    # Find all 3s in the grid
+    threes = ofcolor(I, 3)
+    # For each 3, check if there's another 3 two cells away in any cardinal direction
+    replacements = []
+    for loc in threes:
+        for direction in [(-2, 0), (2, 0), (0, -2), (0, 2)]:
+            neighbor = (loc[0] + direction[0], loc[1] + direction[1])
+            if neighbor in threes:
+                replacements.append(loc)
+                break
+    # Create a new grid where the replacements are changed to 4
+    O = canvas(0, shape(I))
+    for loc in replacements:
+        O = fill(O, 4, (loc,))
+    return O
+"""
+
+
+def test_qwen_regression(snapshot):
+    """Should analyse base Qwen 14B gen code"""
+    assert StaticMetrics.from_literal(qwen_repr) == snapshot

@@ -48,6 +48,8 @@ def format(id: str = None, style: FormatterNames = FormatterNames.GRID):
             debug(foutput)
     debug(id)
 
+    print(TASKS[id].format_prompt())
+
 
 if __name__ == "__main__":
     app()

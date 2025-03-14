@@ -5,6 +5,7 @@ Snapshot tests for solvers with DSL-specific profiling.
 import pytest
 from typing import Tuple
 
+from src.code_interpreter.static_analysis import StaticMetrics
 from src.code_interpreter.execution import Interpreter
 from src.utils.tasks import TASKS, deep_tuple
 from src.utils import get_shape, FORMATTERS, FormatterNames
@@ -117,11 +118,11 @@ def test_solve_any_id_in_interpreter(task_id, func, snapshot):
     task = TASKS[task_id]
     test_Is = [ex.I for ex in task.train + task.test]
 
-    res = Interpreter.run(
-        codestring=getattr(task, func), inputs=test_Is, id=task_id, cleanup=False
-    )
+    codestring = getattr(task, func)
+    res = Interpreter.run(codestring, inputs=test_Is, id=task_id, cleanup=False)
+    metrics = StaticMetrics.from_literal(codestring)
 
-    assert res.metrics.syntax_ok and res.metrics.run_ok
+    assert metrics.syntax_ok and res.run_ok
 
     shell_Is = res.traces.I
     assert shell_Is == test_Is
@@ -134,4 +135,4 @@ def test_solve_any_id_in_interpreter(task_id, func, snapshot):
             want, expect, get_shape(want), get_shape(expect)
         )
 
-    assert res == snapshot
+    assert (res, metrics) == snapshot

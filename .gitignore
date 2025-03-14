@@ -15,3 +15,7 @@ __pycache__
 src/tmp
 unsloth_compiled_cache/
 wandb/
+
+.python-version # tmp, pytthon version aren't synced up between local and remote
+# arc_plain
+datasets/
