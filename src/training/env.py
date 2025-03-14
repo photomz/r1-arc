@@ -58,7 +58,8 @@ class FirstSoftReward:
     def score_exec(cls, out: InterpreterOutput, ex: Example) -> float:
         """Interpreter Output -> R reward."""
         if not out.run_ok:
-            return 0
+            return -0.5
+
         # format, compile, % per example, n correct. Weighted method `score()`
         run_reward = cls.r1 * out.run_ok
         r = run_reward
@@ -104,16 +105,20 @@ def iterate_kwargs(kw: dict):
     return [{k: v[i] for k, v in kw.items()} for i in range(n)]
 
 
+formatnow = lambda: time.strftime("%Y%m%d_%H%M%S")
+
+
 def log_badcode(title, attempt, error):
-    filename = f'{id}-{time.strftime("%Y%m%d_%H%M")}.md'
+    filename = f"{title}-{formatnow()}.md"
     tmp_dir = ROOT / "src/tmp"
     tmp_dir.mkdir(parents=True, exist_ok=True)
     fp = tmp_dir / filename
-    
-    with fp.open('w') as f:
-        f.write(f"# {title}, {time.strftime("%Y%m%d_%H%M%S")}\n")
-        f.write(f"## Bad Generation\n{attempt}\n")
+
+    with fp.open("w") as f:
+        f.write(f"# {title}\n")
+        f.write(f"\nTime: _{formatnow()}_\n")
         f.write(f"## Error\n{error}")
+        f.write(f"## Bad Generation\n{attempt}\n")
 
 
 def guardrail(reward_fn):
@@ -128,24 +133,29 @@ def guardrail(reward_fn):
         )
         for c, kw in items:
             content = c[0].get("content")
-            
+
             try:
                 codestring = extract_python(
                     c[0]["content"] if isinstance(c, list) else c
                 )
+                print(f"<{id[0]} start={formatnow()}>")
+
+                raise e
+
                 if not codestring:
-                    debug("No Python", c[-1]['content'][-100:])
+                    print(">> No Python. End Completion is")
+                    print(c[-1]["content"][-10000:])
                     rewards.append(0)
                     continue
-                    
-                print(id[0])
+
                 pprint(codestring)
 
                 rewards.append(reward_fn(codestring, **kw))
             except Exception as e:
                 debug(e)
-                log_badcode(id, content, e + traceback.format_exc())
+                log_badcode(id[0], content, f"{str(e)}\n{traceback.format_exc()}")
                 rewards.append(0)
+            print(f"<{id[0]}/>")
         return rewards
 
     return wrap_r
@@ -165,12 +175,13 @@ def reward_style(codestring: str, **kwargs) -> float:
     metrics = StaticMetrics.from_literal(codestring)
     return FirstSoftReward.score_style(metrics)
 
+
 # HF gets my reward func name for wandb logging
 # https://github.com/huggingface/trl/blob/fc4dae256d924dfbb906af9c2e817bc6fb7b590b/trl/trainer/grpo_trainer.py#L833
 exec_reward = guardrail(reward_exec)
-exec_reward.__name__ = 'exec'
+exec_reward.__name__ = "exec"
 style_reward = guardrail(reward_style)
-style_reward.__name__ = 'style'
+style_reward.__name__ = "style"
 
 REWARD_FNS = [exec_reward, style_reward]
 

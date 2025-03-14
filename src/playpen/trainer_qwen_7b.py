@@ -22,7 +22,7 @@ lora_rank = 64  # Larger rank = smarter, but slower
 
 assert max_prompt_length + max_completion_length < max_seq_length
 # what % of GRAM is allocated to vllm+model. Not fixed, easily OOM near boundary.
-gram_util = 0.75
+gram_util = 0.60  # <--.75 <- .9
 
 model, tokenizer = FastLanguageModel.from_pretrained(
     model_name="unsloth/DeepSeek-R1-Distill-Qwen-7B",

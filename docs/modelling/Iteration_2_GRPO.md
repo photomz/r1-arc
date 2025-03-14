@@ -50,7 +50,7 @@ B. sLM Baseline 8pm (7am)
 - [x] ```py format reward 
 - [x] Pipe to tempfile, use A.MVP4
 - [ ] MVP3: 1 <tool_response> from gen vLLM
-- [ ] Reward dataclass: format, compile, % per example, n correct. Weighted method `score()` 
+- [x] Reward dataclass: format, compile, % per example, n correct. Weighted method `score()` 
 - [ ] Prompt sLM to rethink from tool call
 - [ ] MVP4: Better 2nd tool call
 - [ ] Bonus: Stats of non-DSL libs (list, count, group)
@@ -73,3 +73,46 @@ Model chose (iter 0) to hide imports in func def and spam import (got stuck). Sh
     from typing import Callable, Optional, Dict, List, Tuple, Dict, List, Tuple, Optional
     from typing import Callable, Optional, Dict, List, Tuple, Dict, List, Tuple, Optional
 ```
+
+## Overnight Run 1
+
+![Reward](../bin/reward_run_1.png)
+Exec reward is 0, and style is unstable?!
+
+4 errors and few flaws stop my work.
+- [x] tmux session killed by Lambda in routine garbage collection (after 4h) -- use [`jobs`](https://www.geeksforgeeks.org/process-control-commands-unixlinux/) instead. 
+- [x] Python exception handler `log_badcode` itself throws errors -- regression pytest handler.
+- [x] Gen 1300: Model gens `print(grid)`, interferes with print() pass tracer file.
+    - Let root handler catch.
+
+```
+13478   File "/home/ubuntu/r1-arc/src/code_interpreter/execution.py", line 150, in run
+13479     with open(tracefp, "r") as f:
+13480          ^^^^^^^^^^^^^^^^^^
+13481 OSError: [Errno 36] File name too long: '[[9, 9, 6, 8, 7, 8, 7, 8, 8, 7, 8, 2, 2, 4, 4, 7], [9, 6, 6, 6, 7, 1, 6, 1, 1, 6, 1, 6, 1, 6, 2, 6], [6, 1, 6, 8, 6, 6, 8, 7, 0, 6, 8, 2, 5, 1, 1, 2], [8, 6, 1, 1, 6, 2, 5, 0, 0, 7, 6, 2, 6, 4, 4, 3], [8, 9, 6, 6, 7, 1, 6, 2, 2, 5, 6, 8, 3, 3, 8, 7], [5, 5, 5, 8, 8, 5, 5, 6, 6, 9, 6, 6, 9, 6, 8, 8], [3, 9, 8, 1, 1, 1, 5, 5, 5, 9, 5, 5, 8, 6, 3, 9], [8, 6, 1, 1, 1, 1, 6, 6, 1, 1, 7, 7, 8, 6, 8, 7], [8, 8, 7, 7, 9, 9, 7, 0, 6, 6, 9, 9, 7, 0, 8, 8], [8, 8, 7, 7, 9, 9, 7, 0, 6, 6, 9, 9, 7, 0, 8, 8], [6, 6, 9, 9, 5, 5, 7, 7, 9, 9, 5, 5, 8, 8, 6, 6], [9, 6, 5, 5, 4, 4, 4, 4, 7, 7, 4, 4, 8, 8, 9, 9], [9, 6, 3, 3, 4, 4, 4, 4, 7, 7, 4, 4, 8, 8, 9, 9], [6, 6, 4, 4, 4, 4, 9, 9, 5, 5, 4, 4, 9, 9, 6, 6], [9, 9, 9, 9, 2, 2, 2, 2, 5, 5, 2, 2, 8, 8, 9, 9]]'
+```
+
+- [x] OOM at GRPO accum loss: alloc 6.75gb but 6.16gb free.
+At `1338` and `1042`, also cause [cryptic](https://chatgpt.com/share/67d4b42a-95c8-800b-b7b8-94a465ff484f) errors: fast matmul `CUBLAS_STATUS_EXECUTION_FAILED` fails.
+- Is Unsloth gradient checkpointing [open issue](https://github.com/unslothai/unsloth/issues/1744#issuecomment-2683953959), also has PyTorch kernel error. Hotfix by lowering gpu_memory_utilization.
+```
+1118: Tried to allocate 8.50 GiB. GPU 0 has a total capacity of 79.10 GiB of which 2.28 GiB is fre
+1058: TypeError: unsupported operand type(s) for +: 'UnboundLocalError' and 'str'
+```
+
+**Flaws**
+
+TODO!
+
+1. No penalty for wrong syntax, clearly bullshit or hallucinated code. Select `TypeError`, `SyntaxError`, `ParserSyntaxError`
+
+```
+ ParserSyntaxError("tokenizer error: Closing parenthesis ')' does not match opening parenthesis '['",
+ ```
+2. Undefined vars: `NameError`, `AttributeError`, `ImportError`
+
+**Design Idea Changes**
+1. Bigger rewards for correct, bigger penalties for bad syntax. Should not climb local minima of format.
+2. Guided [Regex](https://github.com/joerunde/vllm/blob/538517515027c496263b8d1846d7bc16c67e923f/tests/entrypoints/llm/test_guided_generate.py) grammars from vLLM stop bad guesses.
+3. Better print markings. Now unclear if printout corresponds to which gen.
+4. ARC-DSL's format test, x1...xn, no unused.

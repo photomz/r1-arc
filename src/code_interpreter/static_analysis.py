@@ -142,11 +142,9 @@ def inject_logging(code0: str) -> str:
 
     try:
         module = cst.parse_module(code0)
-        edited_tree = module.visit(LoggingInjector())
-
-        # Verify the transformed code is valid Python
-        code1 = edited_tree.code
-        compile(code1, "<string>", "exec")
+        code1 = module.visit(LoggingInjector()).code
+        # Edit: `compile` is too strict. Syntax error will be caught in run.
+        # compile(code1, "<string>", "exec")
         return code1
     except cst.ParserSyntaxError as e:
         debug(e)  # Fail silent. Interpreter's burden to catch in `run_ok``

@@ -8,6 +8,8 @@ while true; do
     echo "==============================================="
 
     uv run pyclean src   
+    export TORCH_USE_CUDA_DSA=1
+
     uv run python -m src.playpen.trainer_qwen_7b
     
     EXIT_CODE=$?

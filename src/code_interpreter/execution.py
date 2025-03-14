@@ -149,7 +149,6 @@ class Interpreter:
             try:
                 with open(tracefp, "r") as f:
                     traces = TracerOutput.from_json(json.load(f))
-                    # debug(traces)
             except FileNotFoundError:
                 debug(res.stdout)
                 debug(tracefp)
@@ -160,7 +159,8 @@ class Interpreter:
                 raise RuntimeError(res.stderr)
 
         if not traces:
-            debug(injected_codestr)
+            print(">> No traces JSON found. Reason in code string: ")
+            pprint(injected_codestr)
 
         run_ok = (
             not res.stderr  # no error str
