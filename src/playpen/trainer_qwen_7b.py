@@ -15,6 +15,7 @@ os.environ["WANDB_PROJECT"] = "r1-arc"
 dataset = training.load_dataset("photonmz/arc_plain")
 
 N_TRAJECTORIES = 4
+VERSION = 1
 max_prompt_length = 14000
 max_completion_length = 15000
 max_seq_length = 30000  # Can increase for longer think traces
@@ -75,7 +76,7 @@ training_args = GRPOConfig(
     max_grad_norm=0.1,
     report_to="wandb",  # Can use Weights & Biases
     output_dir="outputs",
-    run_name=time.strftime("%Y%m%d_%H%M"),
+    run_name=f'v{VERSION}-{time.strftime("%Y%m%d_%H%M")}',
     log_completions=True,
 )
 
