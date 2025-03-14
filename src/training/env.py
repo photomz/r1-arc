@@ -140,8 +140,6 @@ def guardrail(reward_fn):
                 )
                 print(f"<{id[0]} start={formatnow()}>")
 
-                raise e
-
                 if not codestring:
                     print(">> No Python. End Completion is")
                     print(c[-1]["content"][-10000:])
