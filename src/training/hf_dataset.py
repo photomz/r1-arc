@@ -118,18 +118,23 @@ def create(name="arc_plain", username="photonmz"):
 
 
 fmt = FORMATTERS[FormatterNames.SPREADSHEET].format
+max_prompt_len = 30_000
 
 
 @app.command()
 def load(name="photonmz/arc_plain"):
     data0 = load_dataset(name).remove_columns(["augment"])
-    data0 = data0.map(
-        lambda x: {
-            "prompt": [
-                {"role": "user", "content": render_prompt(TaskDef.from_hf(x))},
-            ],
-            **x,
-        }
+    data0 = (
+        data0.map(
+            lambda x: {
+                "prompt": [
+                    {"role": "user", "content": render_prompt(TaskDef.from_hf(x))},
+                ],
+                **x,
+            }
+        )
+        .filter(lambda x: len(x["prompt"][0]["content"]) < max_prompt_len)
+        .filter(lambda x: x["difficulty"] <= 2)
     )
     print(f"Loaded dataset.")
     return data0
