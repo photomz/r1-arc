@@ -3,6 +3,9 @@
 set -e  # Exit immediately if a command exits with a non-zero status
 set -o pipefail  # Catch errors in pipelines
 
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # Define the virtual environment directory
 VENV_DIR=".venv"
 
@@ -22,9 +25,12 @@ source "$VENV_DIR/bin/activate"
 # Verify Python version
 python -V
 
+echo "CUDA version is"
+nvidia-smi | grep "CUDA Version" | awk '{print $9}'
+
 # Install PyTorch with CUDA support
 echo "Installing PyTorch..."
-uv pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124 
+uv pip install "torch>=2.5" -i https://download.pytorch.org/whl/nightly/cu128
 
 # Verify PyTorch installation
 uv run python -c "import torch; print(f'PyTorch: {torch.__version__}\nCUDA available: {torch.cuda.is_available()}\nCUDA version: {torch.version.cuda}')"
