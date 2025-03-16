@@ -15,6 +15,7 @@ dependencies = [
     "ipykernel>=6.29.5",
     "jinja2>=3.1.6",
     "jupyter>=1.1.1",
+    "lark>=1.2.2",
     "libcst>=1.6.0",
     "matplotlib>=3.10.1",
     "openai>=1.66.1",

@@ -116,3 +116,20 @@ TODO!
 2. Guided [Regex](https://github.com/joerunde/vllm/blob/538517515027c496263b8d1846d7bc16c67e923f/tests/entrypoints/llm/test_guided_generate.py) grammars from vLLM stop bad guesses.
 3. Better print markings. Now unclear if printout corresponds to which gen.
 4. ARC-DSL's format test, x1...xn, no unused.
+
+## Overnight Run 2
+
+Meta-RL reward delta paper from HF
+
+Cool GPU optimizations (prefix caching, backtrack stack by stack push/pop) in theory and in [vLLM](https://docs.vllm.ai/en/stable/design/automatic_prefix_caching.html#design-automatic-prefix-caching) forbidden by unsloth.
+Unsloth unstable, less control.
+
+trl doesn't support any kwargs for vLLM guided decoding. Should hotfix `.venv/lib/python3.12/site-packages/trl/trainer/grpo_trainer.py`.
+CFG support tree: unsloth -> vllm -> outlines -> lark -> any CFG
+
+“Premature optimization is the root of all evil.”
+
+### Run `v1-20250316_1050`
+- Easy & medium (diff < 2) tasks only
+- Cut prompt length, filter <30k tokens -- solves `CUBLAS_STATUS_EXECUTION_FAILED` illegal memory access.
+

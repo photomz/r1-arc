@@ -11,6 +11,17 @@
 // NB: compound_stmt in single_input is followed by extra NEWLINE!
 //
 
+// Markdown with Python code blocks grammar
+
+?start: (markdown_text | python_block)*
+
+// Markdown text is anything that's not a Python code block
+markdown_text: /(?:(?!```py)[\s\S])+/
+
+// Make Python block more explicit with its own newline handling
+python_block: "```py" _NEWLINE? python_content "```" _NEWLINE?
+python_content: stmt*
+
 single_input: _NEWLINE | simple_stmt | compound_stmt _NEWLINE
 file_input: (_NEWLINE | stmt)*
 eval_input: testlist _NEWLINE*
@@ -20,7 +31,7 @@ decorators: decorator+
 decorated: decorators (classdef | funcdef | async_funcdef)
 
 async_funcdef: "async" funcdef
-funcdef: "def" name "(" [parameters] ")" ["->" test] ":" suite
+funcdef: "def" "solve" "(" "I" ")" ["->" test] ":" suite
 
 parameters: paramvalue ("," paramvalue)* ["," SLASH ("," paramvalue)*] ["," [starparams | kwparams]]
           | starparams
@@ -49,8 +60,10 @@ lambda_kwparams: "**" name ","?
 
 ?stmt: simple_stmt | compound_stmt
 ?simple_stmt: small_stmt (";" small_stmt)* [";"] _NEWLINE
+// ?small_stmt: (assign_stmt | flow_stmt)
 ?small_stmt: (expr_stmt | assign_stmt | del_stmt | pass_stmt | flow_stmt | import_stmt | global_stmt | nonlocal_stmt | assert_stmt)
 expr_stmt: testlist_star_expr
+// assign_stmt: assign
 assign_stmt: annassign | augassign | assign
 
 annassign: testlist_star_expr ":" test ["=" test]
@@ -189,10 +202,10 @@ star_expr: "*" expr
 ?await_expr: AWAIT? atom_expr
 AWAIT: "await"
 
-?atom_expr: atom_expr "(" [arguments] ")"      -> funccall
-          | atom_expr "[" subscriptlist "]"  -> getitem
-          | atom_expr "." name               -> getattr
-          | atom
+?atom_expr: name "(" [arguments] ")"      -> funccall
+        //  | atom_expr "[" subscriptlist "]"  -> getitem
+        //  | atom_expr "." name               -> getattr
+         | atom
 
 ?atom: "(" yield_expr ")"
      | "(" _tuple_inner? ")" -> tuple
@@ -278,7 +291,10 @@ _NEWLINE: ( /\r?\n[\t ]*/ | COMMENT )+
 // Python terminals
 
 !name: NAME | "match" | "case"
-NAME: /[^\W\d]\w*/
+NAME: VAR_PATTERN | DSL_FUNC // /[^\W\d]\w*/
+VAR_PATTERN: /I|O|x[0-9]+/
+DSL_FUNC: "identity" | "add" | "subtract" | "multiply" | "divide" | "invert" | "even" | "double" | "halve" | "flip" | "equality" | "contained" | "combine" | "intersection" | "difference" | "dedupe" | "order" | "repeat" | "greater" | "size" | "merge" | "maximum" | "minimum" | "valmax" | "valmin" | "argmax" | "argmin" | "mostcommon" | "leastcommon" | "initset" | "both" | "either" | "increment" | "decrement" | "crement" | "sign" | "positive" | "toivec" | "tojvec" | "sfilter" | "mfilter" | "extract" | "totuple" | "first" | "last" | "insert" | "remove" | "other" | "interval" | "astuple" | "product" | "pair" | "branch" | "compose" | "chain" | "matcher" | "rbind" | "lbind" | "power" | "fork" | "apply" | "rapply" | "mapply" | "papply" | "mpapply" | "prapply" | "mostcolor" | "leastcolor" | "height" | "width" | "shape" | "portrait" | "colorcount" | "colorfilter" | "sizefilter" | "asindices" | "ofcolor" | "ulcorner" | "urcorner" | "llcorner" | "lrcorner" | "crop" | "toindices" | "recolor" | "shift" | "normalize" | "dneighbors" | "ineighbors" | "neighbors" | "objects" | "partition" | "fgpartition" | "uppermost" | "lowermost" | "leftmost" | "rightmost" | "square" | "vline" | "hline" | "hmatching" | "vmatching" | "manhattan" | "adjacent" | "bordering" | "centerofmass" | "palette" | "numcolors" | "color" | "toobject" | "asobject" | "rot90" | "rot180" | "rot270" | "hmirror" | "vmirror" | "dmirror" | "cmirror" | "fill" | "paint" | "underfill" | "underpaint" | "hupscale" | "vupscale" | "upscale" | "downscale" | "hconcat" | "vconcat" | "subgrid" | "hsplit" | "vsplit" | "cellwise" | "replace" | "switch" | "center" | "position" | "index" | "canvas" | "corners" | "connect" | "cover" | "trim" | "move" | "tophalf" | "bottomhalf" | "lefthalf" | "righthalf" | "vfrontier" | "hfrontier" | "backdrop" | "delta" | "gravitate" | "inbox" | "outbox" | "box" | "shoot" | "occurrences" | "frontiers" | "compress" | "hperiod" | "vperiod"
+
 COMMENT: /#[^\n]*/
 
 STRING: /([ubf]?r?|r[ubf])("(?!"").*?(?<!\\)(\\\\)*?"|'(?!'').*?(?<!\\)(\\\\)*?')/i

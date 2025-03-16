@@ -67,6 +67,7 @@ class FirstSoftReward:
         O_hats = out.traces.O
         Os = [deep_tuple(e.O) for e in ex]
 
+        # TODO: Should avg on output examples. In reality, most 1 test output so not a problem.
         for ohat, o in zip(O_hats, Os):
             A, B = np.array(ohat), np.array(o)
             oshape_ok = A.shape == B.shape
