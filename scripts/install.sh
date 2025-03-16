@@ -3,7 +3,8 @@
 set -e  # Exit immediately if a command exits with a non-zero status
 set -o pipefail  # Catch errors in pipelines
 
-# Install uv
+# Init Git modules, init uv
+git submodule update --init --recursive
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Define the virtual environment directory
