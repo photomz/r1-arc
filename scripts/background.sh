@@ -4,4 +4,4 @@ tail -f autorun.log
 
 # status: ps aux | grep autorun.sh
 # tail: tail -f autorun.log
-# kill: kill $(pgrep -f autorun.sh)
+# SIGINT: kill -2 $(pgrep -f autorun.sh)
