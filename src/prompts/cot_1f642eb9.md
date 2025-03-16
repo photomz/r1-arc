@@ -1,7 +1,8 @@
 <example>
+## EXAMPLES
 Input 1
 
-	|A|B|C|D|E|F|G|H|I|J
+	A|B|C|D|E|F|G|H|I|J
 1	0|0|0|0|9|0|0|0|0|0
 2	0|0|0|0|0|0|0|0|0|0
 3	0|0|0|0|0|0|0|0|0|0
@@ -13,37 +14,23 @@ Input 1
 9	0|0|0|0|0|0|0|0|0|0
 10	0|0|0|0|0|4|0|0|0|0
 
-Output 1
-
-	|A|B|C|D|E|F|G|H|I|J
-1	0|0|0|0|9|0|0|0|0|0
-2	0|0|0|0|0|0|0|0|0|0
-3	0|0|0|0|0|0|0|0|0|0
-4	0|0|0|0|9|8|0|0|0|0
-5	0|0|0|0|8|8|0|0|0|0
-6	0|0|0|0|8|8|0|0|0|0
-7	6|0|0|0|6|4|0|0|0|0
-8	0|0|0|0|0|0|0|0|0|0
-9	0|0|0|0|0|0|0|0|0|0
-10	0|0|0|0|0|4|0|0|0|0
-
 Diff 1 (I->O)
 
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |8 -> 9|  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |8 -> 6|8 -> 4|  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- |8->9| -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- |8->6|8->4| -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
 
 Input 2
 
-	|A|B|C|D|E|F|G|H|I|J
-1	0|0|0|0|7|0|0|0|0|0
+	A|B|C|D|E|F|G|H|I|J
+1   0|0|0|0|7|0|0|0|0|0
 2	0|0|0|0|0|0|0|0|0|0
 3	0|0|0|0|0|0|0|0|0|0
 4	6|0|0|8|8|8|0|0|0|0
@@ -54,36 +41,22 @@ Input 2
 9	0|0|0|0|0|0|0|0|0|0
 10	0|0|0|0|0|1|0|0|0|0
 
-Output 2
-
-	|A|B|C|D|E|F|G|H|I|J
-1	0|0|0|0|7|0|0|0|0|0
-2	0|0|0|0|0|0|0|0|0|0
-3	0|0|0|0|0|0|0|0|0|0
-4	6|0|0|6|7|8|0|0|0|0
-5	0|0|0|8|8|8|0|0|0|0
-6	0|0|0|8|8|2|0|0|0|2
-7	0|0|0|8|8|8|0|0|0|0
-8	3|0|0|3|8|1|0|0|0|0
-9	0|0|0|0|0|0|0|0|0|0
-10	0|0|0|0|0|1|0|0|0|0
-
 Diff 2 (I->O)
 
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |8 -> 6|8 -> 7|  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |8 -> 2|  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |8 -> 3|  --  |8 -> 1|  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- |8->6|8->7| -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- |8->2| -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- |8->3| -- |8->1| -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
 
 Input 3
 
-	|A|B|C|D|E|F|G|H|I|J
+	A|B|C|D|E|F|G|H|I|J
 1	0|0|0|4|0|0|0|0|0|0
 2	0|0|0|0|0|0|0|0|0|0
 3	0|0|0|0|0|0|0|0|0|0
@@ -95,36 +68,24 @@ Input 3
 9	0|0|0|0|0|0|0|0|0|0
 10	0|0|0|7|0|0|0|0|0|0
 
-Output 3
-
-	|A|B|C|D|E|F|G|H|I|J
-1	0|0|0|4|0|0|0|0|0|0
-2	0|0|0|0|0|0|0|0|0|0
-3	0|0|0|0|0|0|0|0|0|0
-4	0|0|0|4|8|6|0|0|0|6
-5	3|0|0|3|8|8|0|0|0|0
-6	0|0|0|8|8|8|0|0|0|0
-7	2|0|0|2|8|8|0|0|0|0
-8	0|0|0|7|8|2|0|0|0|2
-9	0|0|0|0|0|0|0|0|0|0
-10	0|0|0|7|0|0|0|0|0|0
-
 Diff 3 (I->O)
 
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |8 -> 4|  --  |8 -> 6|  --  |  --  |  --  |  --  
-  --  |  --  |  --  |8 -> 3|  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |8 -> 2|  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |8 -> 7|  --  |8 -> 2|  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- |8->4| -- |8->6| -- | -- | -- | -- 
+ -- | -- | -- |8->3| -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- |8->2| -- | -- | -- | -- | -- | -- 
+ -- | -- | -- |8->7| -- |8->2| -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
+ -- | -- | -- | -- | -- | -- | -- | -- | -- | -- 
 
+
+## TEST
 Input 1
 
-	|A|B|C|D|E|F|G|H|I|J
+	A|B|C|D|E|F|G|H|I|J
 1	0|0|0|6|0|2|0|0|0|0
 2	0|0|0|0|0|0|0|0|0|0
 3	0|0|0|0|0|0|0|0|0|0
@@ -136,67 +97,8 @@ Input 1
 9	0|0|0|0|0|0|0|0|0|0
 10	0|0|0|0|6|0|0|0|0|0
 
-Output 1
-
-	|A|B|C|D|E|F|G|H|I|J
-1	0|0|0|6|0|2|0|0|0|0
-2	0|0|0|0|0|0|0|0|0|0
-3	0|0|0|0|0|0|0|0|0|0
-4	9|0|9|6|8|2|0|0|0|0
-5	0|0|8|8|8|7|0|0|0|7
-6	3|0|3|8|8|8|0|0|0|0
-7	4|0|4|8|6|8|0|0|0|0
-8	0|0|0|0|0|0|0|0|0|0
-9	0|0|0|0|0|0|0|0|0|0
-10	0|0|0|0|6|0|0|0|0|0
-
-Diff 1 (I->O)
-
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |8 -> 9|8 -> 6|  --  |8 -> 2|  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |8 -> 7|  --  |  --  |  --  |  --  
-  --  |  --  |8 -> 3|  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |8 -> 4|  --  |8 -> 6|  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  |  --  
-
-
 <think>
 Outputs maintain input shape, with targeted edits. Let's look for visual patterns:
-
-Diff 1:
-- Brown (9) replaces purple (8) at top left of rectangle
-- Pink (6) replaces purple at bottom left
-- Yellow (4) replaces purple at bottom right
-
-Input 1:
-- Central purple rectangle
-- Brown cell above the new brown position
-- Pink cell left of new pink position
-- Yellow cell below new yellow position
-- Each source cell aligns with its target position
-
-Diff 2:
-- Orange (7) replaces purple at top
-- Pink replaces purple at top left
-- Red (2) replaces purple at middle right
-- Green (3) replaces purple at bottom left
-- Blue (1) replaces purple at bottom right
-
-Input 2:
-- Central purple rectangle
-- Each colored cell aligns with its target position (same row/column)
-
-Diff 3:
-- Yellow replaces purple at top left
-- Pink replaces purple at top right
-- Red replaces purple on left side
-- Orange replaces purple at bottom left
-- Red replaces purple at bottom right
-- Green replaces purple on left side
 
 Additional example input:
 - Purple rectangle center
@@ -247,24 +149,24 @@ The proposed transformation seems to be:
 Let's prove this by exhaustion against every example with an output.
 
 Example 1:
-- 9 at E1 replaces 8 at E4 (vertical alignment)
-- 6 at A7 replaces 8 at E7 (horizontal alignment)
-- 4 at F10 replaces 8 at F7 (vertical alignment)
+- 9 at E1 replaces 8 at E4 (vertical)
+- 6 at A7 replaces 8 at E7 (horizontal)
+- 4 at F10 replaces 8 at F7 (vertical)
 
 Example 2:
-- 7 at E1 replaces 8 at E4 (vertical alignment)
-- 6 at A4 replaces 8 at D4 (horizontal alignment)
-- 2 at J6 replaces 8 at F6 (horizontal alignment)
-- 3 at A8 replaces 8 at D8 (horizontal alignment)
-- 1 at F10 replaces 8 at F8 (vertical alignment)
+- 7 at E1 replaces 8 at E4 (vertical)
+- 6 at A4 replaces 8 at D4 (horizontal)
+- 2 at J6 replaces 8 at F6 (horizontal)
+- 3 at A8 replaces 8 at D8 (horizontal)
+- 1 at F10 replaces 8 at F8 (vertical)
 
 Example 3:
-- 4 at D1 replaces 8 at D4 (vertical alignment)
-- 6 at J4 replaces 8 at F4 (horizontal alignment)
-- 3 at A5 replaces 8 at D5 (horizontal alignment)
-- 2 at A7 replaces 8 at D7 (horizontal alignment)
-- 7 at D10 replaces 8 at D8 (vertical alignment)
-- 2 at J8 replaces 8 at F8 (horizontal alignment)
+- 4 at D1 replaces 8 at D4 (vertical)
+- 6 at J4 replaces 8 at F4 (horizontal)
+- 3 at A5 replaces 8 at D5 (horizontal)
+- 2 at A7 replaces 8 at D7 (horizontal)
+- 7 at D10 replaces 8 at D8 (vertical)
+- 2 at J8 replaces 8 at F8 (horizontal)
 
 Yes, my proposed rule seems to hold across the examples. Let me solve this in the DSL. The user asked me to assume all DSL primitives are in scope, so I will reavoid redefining the functions. 
 </think>

@@ -49,6 +49,7 @@ def get_tasks() -> Dict[str, TaskDef]:
                 solver=solver,
                 verifier=verifier,
                 generator=generator,
+                difficulty=l["difficulty"],
             )
 
     return tasks

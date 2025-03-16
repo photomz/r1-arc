@@ -11,6 +11,14 @@ from collections import defaultdict
 import typer
 from tqdm import tqdm
 
+difficulty_map = {}  # id:difficulty enum
+with Path("src/data/difficulty.json").open("r") as f:
+    d = json.load(f)
+    for _, split in d.items():
+        for k, arr in split.items():
+            for id in arr:
+                difficulty_map[id] = k
+
 
 def process_files(source_dir: Path, output_file: Path, desc: str) -> None:
     """Process all JSON files in source_dir and write to output_file."""
@@ -29,7 +37,12 @@ def process_files(source_dir: Path, output_file: Path, desc: str) -> None:
                 task_id = file_path.stem
 
                 # Create task structure
-                task_data = {"task_id": task_id, "train": [], "test": []}
+                task_data = {
+                    "task_id": task_id,
+                    "train": [],
+                    "test": [],
+                    "difficulty": difficulty_map[task_id],
+                }
 
                 # Add examples to appropriate lists
                 for split in ["train", "test"]:

@@ -16,8 +16,8 @@ app = typer.Typer()
 @app.command()
 def prompt(
     id: str = "5521c0d9",
-    provider: ProviderName = ProviderName.VLLM,
-    model: ModelName = ModelName.DEEPSEEK_REASONER,
+    provider: ProviderName = ProviderName.HYPERBOLIC,
+    model: ModelName = ModelName.HYPERBOLIC_R1,
     stream: bool = True,
 ):
 
@@ -29,7 +29,7 @@ def prompt(
     ]
 
     params = {
-        "temperature": 0.9,
+        "temperature": 0.7,
         "top_p": 0.95,
     }
 

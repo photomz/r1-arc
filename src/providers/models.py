@@ -139,7 +139,6 @@ class Provider:
     @cached_property
     def client(self) -> AsyncOpenAI:
         """All supported providers are OpenAI-compatible, so far"""
-        debug(os.environ[self.env_key])
         return AsyncOpenAI(api_key=os.environ[self.env_key], base_url=self.base_url)
 
     @classmethod

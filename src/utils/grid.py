@@ -73,7 +73,7 @@ class SpreadsheetFormatter(Formatter):
         super().format(grid, shape)
         _, n_cols = shape
 
-        header = "\t" + cls.sep.join([""] + ALPHA[:n_cols])
+        header = "\t" + cls.sep.join(ALPHA[:n_cols])
         rows = "\n".join(
             str(i + 1) + "\t" + cls.sep.join([str(x) for x in row])
             for i, row in enumerate(grid)
@@ -84,7 +84,7 @@ class SpreadsheetFormatter(Formatter):
 @dataclass
 class Differ(Formatter):
     change: str = "->"
-    blank: str = "--"
+    blank: str = "    "
 
     @classmethod
     def diff(self, A: Grid, B: Grid, A_shape, B_shape) -> str:
@@ -103,7 +103,7 @@ class ListDiffer(Differ):
     @classmethod
     def diff(self, A: Grid, B: Grid, a, b) -> str:
         """List A->B color diffs like adjacency list"""
-        super().diff(A, B)
+        super().diff(A, B, a, b)
 
         diffs = bucket_diffs(A, B)
         output = []

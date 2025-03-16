@@ -60,16 +60,17 @@ class Example:
         s += fmt1(self.I, self.I_shape)
 
         if not no_output:
-            s += "\n\n"
-            s += f"Output {self.n+1}"
-            s += "\n\n"
-            s += fmt1(self.O, self.O_shape)
-
             if self.I_shape == self.O_shape:
                 s += "\n\n"
                 s += f"Diff {self.n+1} (I->O)"
                 s += "\n\n"
                 s += fmt2(self.I, self.O, self.I_shape, self.O_shape)
+            else:
+                # 3/16: Either print Output or Diff grid, not both.
+                s += "\n\n"
+                s += f"Output {self.n+1}"
+                s += "\n\n"
+                s += fmt1(self.O, self.O_shape)
 
         return s
 
@@ -83,12 +84,16 @@ class Example:
         return (deep_tuple(self.I), deep_tuple(self.O))
 
 
+difficulty_enum = {"easy": 1, "medium": 2, "hard": 3, "expert": 4}
+
+
 class TaskDef(BaseModel):
     id: str
     train: List[Example]
     test: List[Example]
 
     split: DatasetSplit = "train"
+    difficulty: Optional[str] = None
 
     solver: Optional[Callable] = None
     verifier: Optional[Callable] = None
@@ -156,6 +161,7 @@ class TaskDef(BaseModel):
             "test": [ex.dumps() for ex in self.test],
             "solver": self.solver_repr if self.solver else None,
             "augment": None,
+            "difficulty": difficulty_enum[self.difficulty] if self.difficulty else None,
         }
 
     @classmethod
