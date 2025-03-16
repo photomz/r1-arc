@@ -126,6 +126,7 @@ Unsloth unstable, less control.
 
 trl doesn't support any kwargs for vLLM guided decoding. Should hotfix `.venv/lib/python3.12/site-packages/trl/trainer/grpo_trainer.py`.
 CFG support tree: unsloth -> vllm -> outlines -> lark -> any CFG
+- Lark grammars for guided vLLM dec not working. Continue when more time.
 
 “Premature optimization is the root of all evil.”
 
