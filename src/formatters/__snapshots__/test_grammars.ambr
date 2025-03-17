@@ -1,0 +1,1284 @@
+# serializer version: 1
+# name: test_streaming
+  list([
+    '''
+      start
+  
+    ''',
+    '''
+      start
+  
+    ''',
+    '''
+      start
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __start_star_0
+  
+    ''',
+    '''
+      __think_star_1	Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+  
+    ''',
+    '''
+      __think_star_1	Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      think
+        <think>
+        Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+        </think>
+  
+    ''',
+    '''
+      __file_input_star_2
+  
+    ''',
+    '''
+      __file_input_star_2
+  
+    ''',
+    '''
+      __file_input_star_2
+  
+    ''',
+    '''
+      __file_input_star_2
+  
+    ''',
+    '''
+      __file_input_star_2
+  
+    ''',
+    '''
+      __file_input_star_2
+  
+    ''',
+    '''
+      __file_input_star_2
+  
+    ''',
+    '''
+      var
+        name	x1
+  
+    ''',
+    '''
+      var
+        name	x1
+  
+    ''',
+    '''
+      name	partition
+  
+    ''',
+    '''
+      arguments
+        var
+          name	I
+  
+    ''',
+    '''
+      arguments
+        var
+          name	I
+  
+    ''',
+    '''
+      assign_stmt
+        assign
+          var
+            name	x1
+          funccall
+            name	partition
+            arguments
+              var
+                name	I
+  
+    ''',
+    '''
+      __suite_plus_24
+        assign_stmt
+          assign
+            var
+              name	x1
+            funccall
+              name	partition
+              arguments
+                var
+                  name	I
+  
+    ''',
+    '''
+      var
+        name	x2
+  
+    ''',
+    '''
+      var
+        name	x2
+  
+    ''',
+    '''
+      var
+        name	x2
+  
+    ''',
+    '''
+      name	argmin
+  
+    ''',
+    '''
+      name	argmin
+  
+    ''',
+    '''
+      var
+        name	x1
+  
+    ''',
+    '''
+      var
+        name	x1
+  
+    ''',
+    '''
+      arguments
+        var
+          name	x1
+        var
+          name	size
+  
+    ''',
+    '''
+      arguments
+        var
+          name	x1
+        var
+          name	size
+  
+    ''',
+    '''
+      __suite_plus_24
+        assign_stmt
+          assign
+            var
+              name	x1
+            funccall
+              name	partition
+              arguments
+                var
+                  name	I
+        assign_stmt
+          assign
+            var
+              name	x2
+            funccall
+              name	argmin
+              arguments
+                var
+                  name	x1
+                var
+                  name	size
+  
+    ''',
+    '''
+      var
+        name	O
+  
+    ''',
+    '''
+      var
+        name	O
+  
+    ''',
+    '''
+      var
+        name	O
+  
+    ''',
+    '''
+      name	subgrid
+  
+    ''',
+    '''
+      name	subgrid
+  
+    ''',
+    '''
+      var
+        name	x2
+  
+    ''',
+    '''
+      var
+        name	x2
+  
+    ''',
+    '''
+      arguments
+        var
+          name	x2
+        var
+          name	I
+  
+    ''',
+    '''
+      arguments
+        var
+          name	x2
+        var
+          name	I
+  
+    ''',
+    '''
+      __suite_plus_24
+        assign_stmt
+          assign
+            var
+              name	x1
+            funccall
+              name	partition
+              arguments
+                var
+                  name	I
+        assign_stmt
+          assign
+            var
+              name	x2
+            funccall
+              name	argmin
+              arguments
+                var
+                  name	x1
+                var
+                  name	size
+        assign_stmt
+          assign
+            var
+              name	O
+            funccall
+              name	subgrid
+              arguments
+                var
+                  name	x2
+                var
+                  name	I
+  
+    ''',
+    '''
+      __suite_plus_24
+        assign_stmt
+          assign
+            var
+              name	x1
+            funccall
+              name	partition
+              arguments
+                var
+                  name	I
+        assign_stmt
+          assign
+            var
+              name	x2
+            funccall
+              name	argmin
+              arguments
+                var
+                  name	x1
+                var
+                  name	size
+        assign_stmt
+          assign
+            var
+              name	O
+            funccall
+              name	subgrid
+              arguments
+                var
+                  name	x2
+                var
+                  name	I
+  
+    ''',
+    '''
+      __suite_plus_24
+        assign_stmt
+          assign
+            var
+              name	x1
+            funccall
+              name	partition
+              arguments
+                var
+                  name	I
+        assign_stmt
+          assign
+            var
+              name	x2
+            funccall
+              name	argmin
+              arguments
+                var
+                  name	x1
+                var
+                  name	size
+        assign_stmt
+          assign
+            var
+              name	O
+            funccall
+              name	subgrid
+              arguments
+                var
+                  name	x2
+                var
+                  name	I
+  
+    ''',
+    '''
+      start
+        think
+          <think>
+          Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+          </think>
+        answer
+          
+      # Solution
+      
+      My solution is blah blah ... 
+      
+          pyblock
+            ```py
+            funcdef
+              None
+              suite
+                assign_stmt
+                  assign
+                    var
+                      name	x1
+                    funccall
+                      name	partition
+                      arguments
+                        var
+                          name	I
+                assign_stmt
+                  assign
+                    var
+                      name	x2
+                    funccall
+                      name	argmin
+                      arguments
+                        var
+                          name	x1
+                        var
+                          name	size
+                assign_stmt
+                  assign
+                    var
+                      name	O
+                    funccall
+                      name	subgrid
+                      arguments
+                        var
+                          name	x2
+                        var
+                          name	I
+                return_stmt
+                  var
+                    name	O
+            ```
+  
+    ''',
+    '''
+      start
+        think
+          <think>
+          Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+          </think>
+        answer
+          
+      # Solution
+      
+      My solution is blah blah ... 
+      
+          pyblock
+            ```py
+            funcdef
+              None
+              suite
+                assign_stmt
+                  assign
+                    var
+                      name	x1
+                    funccall
+                      name	partition
+                      arguments
+                        var
+                          name	I
+                assign_stmt
+                  assign
+                    var
+                      name	x2
+                    funccall
+                      name	argmin
+                      arguments
+                        var
+                          name	x1
+                        var
+                          name	size
+                assign_stmt
+                  assign
+                    var
+                      name	O
+                    funccall
+                      name	subgrid
+                      arguments
+                        var
+                          name	x2
+                        var
+                          name	I
+                return_stmt
+                  var
+                    name	O
+            ```
+          
+      
+      Explanation
+  
+    ''',
+    '''
+      start
+        think
+          <think>
+          Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+          </think>
+        answer
+          
+      # Solution
+      
+      My solution is blah blah ... 
+      
+          pyblock
+            ```py
+            funcdef
+              None
+              suite
+                assign_stmt
+                  assign
+                    var
+                      name	x1
+                    funccall
+                      name	partition
+                      arguments
+                        var
+                          name	I
+                assign_stmt
+                  assign
+                    var
+                      name	x2
+                    funccall
+                      name	argmin
+                      arguments
+                        var
+                          name	x1
+                        var
+                          name	size
+                assign_stmt
+                  assign
+                    var
+                      name	O
+                    funccall
+                      name	subgrid
+                      arguments
+                        var
+                          name	x2
+                        var
+                          name	I
+                return_stmt
+                  var
+                    name	O
+            ```
+          
+      
+      Explanation of
+  
+    ''',
+    '''
+      start
+        think
+          <think>
+          Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+          </think>
+        answer
+          
+      # Solution
+      
+      My solution is blah blah ... 
+      
+          pyblock
+            ```py
+            funcdef
+              None
+              suite
+                assign_stmt
+                  assign
+                    var
+                      name	x1
+                    funccall
+                      name	partition
+                      arguments
+                        var
+                          name	I
+                assign_stmt
+                  assign
+                    var
+                      name	x2
+                    funccall
+                      name	argmin
+                      arguments
+                        var
+                          name	x1
+                        var
+                          name	size
+                assign_stmt
+                  assign
+                    var
+                      name	O
+                    funccall
+                      name	subgrid
+                      arguments
+                        var
+                          name	x2
+                        var
+                          name	I
+                return_stmt
+                  var
+                    name	O
+            ```
+          
+      
+      Explanation of DSL
+  
+    ''',
+    '''
+      start
+        think
+          <think>
+          Hello I'm thinking about ... a hash # 
+      
+      Wait, Case 2 ...
+      
+      This is **bold**
+      With _italics_ and code
+      * Lists
+      # Headers
+      [Links](https://example.com)
+      
+      Still case 2 ...
+      
+      Alternative, ... take 3
+      
+      I'm stuck here.... case 4
+      
+      
+          </think>
+        answer
+          
+      # Solution
+      
+      My solution is blah blah ... 
+      
+          pyblock
+            ```py
+            funcdef
+              None
+              suite
+                assign_stmt
+                  assign
+                    var
+                      name	x1
+                    funccall
+                      name	partition
+                      arguments
+                        var
+                          name	I
+                assign_stmt
+                  assign
+                    var
+                      name	x2
+                    funccall
+                      name	argmin
+                      arguments
+                        var
+                          name	x1
+                        var
+                          name	size
+                assign_stmt
+                  assign
+                    var
+                      name	O
+                    funccall
+                      name	subgrid
+                      arguments
+                        var
+                          name	x2
+                        var
+                          name	I
+                return_stmt
+                  var
+                    name	O
+            ```
+          
+      
+      Explanation of DSL:
+  
+    ''',
+  ])
+# ---

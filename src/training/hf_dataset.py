@@ -135,6 +135,7 @@ def load(name="photonmz/arc_plain"):
         )
         .filter(lambda x: len(x["prompt"][0]["content"]) < max_prompt_len)
         .filter(lambda x: x["difficulty"] <= 2)
+        .shuffle()
     )
     print(f"Loaded dataset.")
     return data0

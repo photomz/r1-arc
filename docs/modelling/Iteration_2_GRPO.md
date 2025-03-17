@@ -134,3 +134,5 @@ CFG support tree: unsloth -> vllm -> outlines -> lark -> any CFG
 - Easy & medium (diff < 2) tasks only
 - Cut prompt length, filter <30k tokens -- solves `CUBLAS_STATUS_EXECUTION_FAILED` illegal memory access.
 
+## Guided CFG Grammars Progress
+DSL CFG works in Lark but not for streaming. Validating a streaming CFG will be huge pain, abandoning.
