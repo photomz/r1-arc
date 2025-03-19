@@ -40,3 +40,157 @@
   journal = {arXiv preprint arXiv:2404.14219},
   year    = {2024}
 } 
+@misc{MIT,
+  title     = {The {Surprising} {Effectiveness} of {Test}-{Time} {Training} for {Abstract} {Reasoning}},
+  doi       = {10.48550/arXiv.2411.07279},
+  language  = {en},
+  urldate   = {2025-03-02},
+  publisher = {arXiv},
+  author    = {Akyürek, Ekin and Damani, Mehul and Qiu, Linlu and Guo, Han and Kim, Yoon and Andreas, Jacob},
+  month     = nov,
+  year      = {2024}
+}
+
+@misc{shao_deepseekmath_2024,
+  title      = {{DeepSeekMath}: {Pushing} the {Limits} of {Mathematical} {Reasoning} in {Open} {Language} {Models}},
+  shorttitle = {{DeepSeekMath}},
+  url        = {http://arxiv.org/abs/2402.03300},
+  doi        = {10.48550/arXiv.2402.03300},
+  abstract   = {Mathematical reasoning poses a significant challenge for language models due to its complex and structured nature. In this paper, we introduce DeepSeekMath 7B, which continues pre-training DeepSeek-Coder-Base-v1.5 7B with 120B math-related tokens sourced from Common Crawl, together with natural language and code data. DeepSeekMath 7B has achieved an impressive score of 51.7\% on the competition-level MATH benchmark without relying on external toolkits and voting techniques, approaching the performance level of Gemini-Ultra and GPT-4. Self-consistency over 64 samples from DeepSeekMath 7B achieves 60.9\% on MATH. The mathematical reasoning capability of DeepSeekMath is attributed to two key factors: First, we harness the significant potential of publicly available web data through a meticulously engineered data selection pipeline. Second, we introduce Group Relative Policy Optimization (GRPO), a variant of Proximal Policy Optimization (PPO), that enhances mathematical reasoning abilities while concurrently optimizing the memory usage of PPO.},
+  urldate    = {2025-03-02},
+  publisher  = {arXiv},
+  author     = {Shao, Zhihong and Wang, Peiyi and Zhu, Qihao and Xu, Runxin and Song, Junxiao and Bi, Xiao and Zhang, Haowei and Zhang, Mingchuan and Li, Y. K. and Wu, Y. and Guo, Daya},
+  month      = apr,
+  year       = {2024},
+  note       = {arXiv:2402.03300 [cs]},
+  keywords   = {Computer Science - Machine Learning, Computer Science - Artificial Intelligence, Computer Science - Computation and Language},
+  file       = {Preprint PDF:/Users/markusz/Zotero/storage/FSGES7ED/Shao et al. - 2024 - DeepSeekMath Pushing the Limits of Mathematical Reasoning in Open Language Models.pdf:application/pdf;Snapshot:/Users/markusz/Zotero/storage/6M65M8IR/2402.html:text/html}
+}
+
+@misc{barc,
+  title      = {Combining {Induction} and {Transduction} for {Abstract} {Reasoning}},
+  shorttitle = {{BARC}},
+  url        = {http://arxiv.org/abs/2411.02272},
+  doi        = {10.48550/arXiv.2411.02272},
+  abstract   = {When learning an input-output mapping from very few examples, is it better to first infer a latent function that explains the examples, or is it better to directly predict new test outputs, e.g. using a neural network? We study this question on ARC by training neural models for induction (inferring latent functions) and transduction (directly predicting the test output for a given test input). We train on synthetically generated variations of Python programs that solve ARC training tasks. We find inductive and transductive models solve different kinds of test problems, despite having the same training problems and sharing the same neural architecture: Inductive program synthesis excels at precise computations, and at composing multiple concepts, while transduction succeeds on fuzzier perceptual concepts. Ensembling them approaches human-level performance on ARC.},
+  urldate    = {2025-03-08},
+  publisher  = {arXiv},
+  author     = {Li, Wen-Ding and Hu, Keya and Larsen, Carter and Wu, Yuqing and Alford, Simon and Woo, Caleb and Dunn, Spencer M. and Tang, Hao and Naim, Michelangelo and Nguyen, Dat and Zheng, Wei-Long and Tavares, Zenna and Pu, Yewen and Ellis, Kevin},
+  year       = {2024}
+}
+
+@misc{deepseek-ai_deepseek-r1_2025,
+  title      = {michaelhodel/arc-dsl},
+  copyright  = {MIT},
+  shorttitle = {{ARC}-{DSL}},
+  url        = {https://github.com/michaelhodel/arc-dsl},
+  abstract   = {Domain Specific Language for the Abstraction and Reasoning Corpus},
+  urldate    = {2025-03-10},
+  author     = {Hodel, Michael},
+  month      = {mar},
+  year       = {2025}
+}
+
+@misc{Hodel,
+  title     = {Addressing the {Abstraction} and {Reasoning} {Corpus} via {Procedural} {Example} {Generation}},
+  url       = {http://arxiv.org/abs/2404.07353},
+  doi       = {10.48550/arXiv.2404.07353},
+  abstract  = {This work presents code to procedurally generate examples for the ARC training tasks. For each of the 400 tasks, an example generator following the transformation logic of the original examples was created. In effect, the assumed underlying distribution of examples for any given task was reverse engineered by implementing a means to sample from it. An attempt was made to cover an as large as reasonable space of possible examples for each task. That is, whenever the original examples of a given task may be limited in their diversity e.g. by having the dimensions of the grids, the set of symbols or number of objects constant or within tight bounds, even though the transformation does not require it, such constraints were lifted. Having access to not just a few examples per task, as the case for ARC, but instead very many, should enable a wide range of experiments that may be important stepping stones towards making leaps on the benchmark.},
+  urldate   = {2025-03-10},
+  publisher = {arXiv},
+  author    = {Hodel, Michael},
+  month     = {apr},
+  year      = {2024}
+}
+
+@misc{Greenblatt,
+  type     = {Substack newsletter},
+  title    = {Getting 50\% ({SoTA}) on {ARC}-{AGI} with {GPT}-4o},
+  url      = {https://redwoodresearch.substack.com/p/getting-50-sota-on-arc-agi-with-gpt},
+  abstract = {You can just draw more samples},
+  urldate  = {2025-03-10},
+  journal  = {Redwood Research blog},
+  author   = {Greenblatt, Ryan},
+  month    = {jun},
+  year     = {2024}
+}
+
+@misc{Jeremy,
+  type     = {Substack newsletter},
+  title    = {How {I} came in first on {ARC}-{AGI}-{Pub} using {Sonnet} 3.5 with {Evolutionary} {Test}-time {Compute}},
+  url      = {https://jeremyberman.substack.com/p/how-i-got-a-record-536-on-arc-agi},
+  abstract = {How I got the top score on ARC-AGI using LLMs},
+  urldate  = {2025-03-10},
+  journal  = {Jeremy's Substack},
+  author   = {Berman, Jeremy},
+  month    = {dec},
+  year     = {2024}
+}
+
+@misc{qu_optimizing_2025,
+  title     = {Optimizing {Test}-{Time} {Compute} via {Meta} {Reinforcement} {Fine}-{Tuning}},
+  url       = {http://arxiv.org/abs/2503.07572},
+  doi       = {10.48550/arXiv.2503.07572},
+  abstract  = {Training models to effectively use test-time compute is crucial for improving the reasoning performance of LLMs. Current methods mostly do so via fine-tuning on search traces or running RL with 0/1 outcome reward, but do these approaches efficiently utilize test-time compute? Would these approaches continue to scale as the budget improves? In this paper, we try to answer these questions. We formalize the problem of optimizing test-time compute as a meta-reinforcement learning (RL) problem, which provides a principled perspective on spending test-time compute. This perspective enables us to view the long output stream from the LLM as consisting of several episodes run at test time and leads us to use a notion of cumulative regret over output tokens as a way to measure the efficacy of test-time compute. Akin to how RL algorithms can best tradeoff exploration and exploitation over training, minimizing cumulative regret would also provide the best balance between exploration and exploitation in the token stream. While we show that state-of-the-art models do not minimize regret, one can do so by maximizing a dense reward bonus in conjunction with the outcome 0/1 reward RL. This bonus is the ''progress'' made by each subsequent block in the output stream, quantified by the change in the likelihood of eventual success. Using these insights, we develop Meta Reinforcement Fine-Tuning, or MRT, a new class of fine-tuning methods for optimizing test-time compute. MRT leads to a 2-3x relative gain in performance and roughly a 1.5x gain in token efficiency for math reasoning compared to outcome-reward RL.},
+  urldate   = {2025-03-16},
+  publisher = {arXiv},
+  author    = {Qu, Yuxiao and Yang, Matthew Y. R. and Setlur, Amrith and Tunstall, Lewis and Beeching, Edward Emanuel and Salakhutdinov, Ruslan and Kumar, Aviral},
+  month     = {mar},
+  year      = {2025}
+}
+
+@misc{openai_openai_nodate,
+  title    = {{OpenAI} o3 {Breakthrough} {High} {Score} on {ARC}-{AGI}-{Pub}},
+  url      = {https://arcprize.org/blog/oai-o3-pub-breakthrough},
+  abstract = {OpenAI o3 scores 75.7\% on ARC-AGI public leaderboard.},
+  language = {en},
+  year     = {2024},
+  urldate  = {2025-03-18},
+  journal  = {ARC Prize},
+  author   = {{OpenAI}}
+}
+
+@misc{OmniARC,
+  title   = {arc24},
+  year    = {2024},
+  url     = {https://ironbar.github.io/arc24/},
+  urldate = {2025-03-18},
+  author  = {Barbadillo, Guillermo}
+}
+
+
+@misc{unsloth,
+  title     = {unslothai/unsloth},
+  author    = {Unsloth},
+  copyright = {Apache-2.0},
+  url       = {https://github.com/unslothai/unsloth},
+  urldate   = {2025-03-19},
+  publisher = {Unsloth AI},
+  year      = {2025},
+  note      = {original-date: 2023-11-29T16:50:09Z},
+  keywords  = {deepseek, deepseek-r1, fine-tuning, finetuning, gemma, gemma2, llama, llama3, llm, llms, lora, mistral, phi3, qlora, unsloth}
+}
+
+@misc{vllm,
+  title     = {vllm-project/vllm},
+  author    = {vLLM},
+  copyright = {Apache-2.0},
+  url       = {https://github.com/vllm-project/vllm},
+  urldate   = {2025-03-19},
+  publisher = {vLLM},
+  year      = {2025},
+  note      = {original-date: 2023-02-09T11:23:20Z},
+  keywords  = {amd, cuda, deepseek, gpt, hpu, inference, inferentia, llama, llm, llm-serving, llmops, mlops, model-serving, pytorch, qwen, rocm, tpu, trainium, transformer, xpu}
+}
+
+@misc{trl,
+  title      = {{TRL}: {Transformer} {Reinforcement} {Learning}},
+  copyright  = {Apache-2.0},
+  author     = {HuggingFace},
+  shorttitle = {{TRL}},
+  url        = {https://github.com/huggingface/trl},
+  urldate    = {2025-03-19},
+  author     = {von Werra, Leandro and Belkada, Younes and Tunstall, Lewis and Beeching, Edward and Thrush, Tristan and Lambert, Nathan and Huang, Shengyi and Rasul, Kashif and Gallouédec, Quentin},
+  year       = {2025},
+  note       = {original-date: 2020-03-27T10:54:55Z}
+}
